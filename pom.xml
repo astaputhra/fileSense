@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.5.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>iMatch</groupId>
+	<artifactId>iMatch.FileSense</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>iMatch.FileSense</name>
+	<description>iMatch FileSense for Spring Boot</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<requiresUnpack>
+						<dependency>
+							<groupId>com.iMatch</groupId>
+							<artifactId>iMatch.FileSense</artifactId>
+						</dependency>
+					</requiresUnpack>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<java.version>1.8</java.version>
+		<version.spring.integration>4.2.5.RELEASE</version.spring.integration>
+		<version.joda.time>2.9.1</version.joda.time>
+		<version.zip4j>1.3.1</version.zip4j>
+		<version.poi.core>3.13</version.poi.core>
+		<version.poi.ooxml>3.13</version.poi.ooxml>
+		<version.pentaho.kettle>5.4.0.1-130</version.pentaho.kettle>
+		<version.usertype.core>4.0.0.GA</version.usertype.core>
+
+
+
+	</properties>
+
+
+	<repositories>
+		<repository>
+			<id>Hexgen Repo</id>
+			<name>Git based repo</name>
+			<url>https://github.com/HexagonGlobal/mvn-repo-demo/raw/master/</url>
+		</repository>
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<name>EclipseLink Repo</name>
+		</repository>
+		<repository>
+			<id>Pentaho</id>
+			<url>http://nexus.pentaho.org/content/groups/omni</url>
+		</repository>
+		<repository>
+			<id>spring-maven-release</id>
+			<name>Spring Maven Release Repository</name>
+			<url>http://maven.springframework.org/release</url>
+		</repository>
+		<repository>
+			<id>spring-roo-repository</id>
+			<name>Spring Roo Repository</name>
+			<url>http://spring-roo-repository.springsource.org/release</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-mail</artifactId>
+			<version>${version.spring.integration}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-file -->
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-file</artifactId>
+			<version>4.2.5.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-test -->
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-test</artifactId>
+			<version>4.2.5.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${version.joda.time}</version>
+		</dependency>
+		<!--
+                &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 &ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                    <version>${version.joda.time}</version>
+                </dependency>
+        -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${version.poi.core}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${version.poi.ooxml}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.lingala.zip4j</groupId>
+			<artifactId>zip4j</artifactId>
+			<version>${version.zip4j}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>pentaho-kettle</groupId>
+			<artifactId>kettle-core</artifactId>
+			<version>${version.pentaho.kettle}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>xerces</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xalan</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xml-apis</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.xmlgraphics</groupId>
+					<artifactId>batik-js</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>pentaho-kettle</groupId>
+			<artifactId>kettle-engine</artifactId>
+			<version>${version.pentaho.kettle}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>pentaho</groupId>
+			<artifactId>metastore</artifactId>
+			<version>${version.pentaho.kettle}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.19</version>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.jadira.usertype</groupId>-->
+			<!--<artifactId>usertype.core</artifactId>-->
+			<!--<version>${version.usertype.core}</version>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.0.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mozilla/rhino -->
+		<dependency>
+			<groupId>org.mozilla</groupId>
+			<artifactId>rhino</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+		<!--</dependency>-->
+
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot</artifactId>-->
+			<!--<version>2.2.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!-- Thanks for using https://jar-download.com -->
+
+
+	</dependencies>
+</project>

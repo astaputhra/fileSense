@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:file="http://www.springframework.org/schema/integration/file"
+       xmlns:mail="http://www.springframework.org/schema/integration/mail"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/integration/file
+        http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+        http://www.springframework.org/schema/integration/mail http://www.springframework.org/schema/integration/mail/spring-integration-mail.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <util:properties id="appProp" location="classpath:application.properties" />
+
+    <context:component-scan base-package="com.iMatch.hexagon" />
+
+    <!--Setup the common lib based File listener-->
+
+    <bean class="org.springframework.integration.file.WatchServiceDirectoryScanner" id="leafScanner">
+        <constructor-arg name="directory" value="${etl.directory.monitor.directory}"/>
+        <property name="filter" ref="filter"/>
+        <property name="autoStartup" value="true"/>
+    </bean>
+
+    <bean id="filter" class="com.iMatch.ETLDirectoryScanner">
+        <property name="enabled" value="${etl.directory.file.age.enabled}" />
+        <property name="age" value="${etl.directory.file.age}"/>
+    </bean>
+
+    <bean id="handler" class="com.iMatch.EtlDirectoryMonitor">
+        <property name="root" value="${etl.directory.monitor.directory}"/>
+        <property name="companyAndDivisionPartOfPath" value="${etl.directory.monitor.isCompanyAndDivisionPartOfPath}"/>
+        <property name="leafScanner" ref="leafScanner"/>
+    </bean>
+
+    <!--<bean id="locker" class="org.springframework.integration.file.locking.NioFileLocker"/>-->
+
+    <file:inbound-channel-adapter id="filesIn" directory="${etl.directory.monitor.directory}" scanner="leafScanner" >
+        <int:poller id="poller" fixed-rate="${etl.directory.monitor.frequency}" time-unit="SECONDS" max-messages-per-poll="${etl.files.per.poll}"/>
+    </file:inbound-channel-adapter>
+
+    <int:service-activator input-channel="filesIn" ref="handler" auto-startup="true" method="handler"/>
+
+    <bean id="hexgenDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+        <property name="driverClassName" value="${spring.datasource.driverClassName}"/>
+        <property name="url" value="${spring.datasource.url}"/>
+        <property name="username" value="${spring.datasource.username}"/>
+        <property name="password" value="${spring.datasource.password}"/>
+    </bean>
+
+    <bean class="com.iMatch.etl.datauploader.internal.MappingConfig" id="mappingConfig" init-method="init">
+        <property name="typeMapping" value="classpath:uploadResource/UploadTypeMapping.xml" />
+    </bean>
+
+    <bean class="com.iMatch.etl.datauploader.internal.kettle.KettleGlue" id="etlService" init-method="init">
+        <property name="mappingConfig" ref="mappingConfig" />
+        <property name="dbusername" value="${spring.datasource.username}" />
+        <property name="password" value="${spring.datasource.password}" />
+        <property name="url" value="${spring.datasource.url}" />
+        <property name="driverClassName" value="${spring.datasource.driverClassName}" />
+        <property name="jpavendoradaptor" value="${jpavendoradaptor}" />
+    </bean>
+
+    <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexFileSense" id="hexFileSense" scope="singleton" />
+    <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexDBFParser" id="dbfParser" scope="singleton" />
+    <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexExcelParser" id="excelParser" scope="singleton" />
+    <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexTextParser" id="textParser" scope="singleton" />
+
+    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
+        <property name="jpaDialect" ref="jpaDialect"/>
+        <property name="dataSource" ref="hexgenDataSource" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
+                <property name="showSql" value="true" />
+                <property name="generateDdl" value="false"/>
+                <property name="database" value="${jpavendoradaptor}"/>
+            </bean>
+        </property>
+        <property name="sharedCacheMode" value="ENABLE_SELECTIVE"/>
+        <property name="persistenceUnitName" value="persistenceUnit" />
+        <property name="packagesToScan" value="com.iMatch"/>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.max_fetch_depth">3</prop>
+                <!--<prop key="hibernate.jdbc.fetch_size">${jdbcFetchSize}</prop>-->
+                <prop key="hibernate.order_inserts">true</prop>
+                <prop key="hibernate.order_updates">true</prop>
+                <!--<prop key="hibernate.jdbc.batch_size">${jdbcBatchSize}</prop>-->
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">none</prop>
+                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.DefaultNamingStrategy</prop>
+                <prop key="hibernate.connection.charSet">UTF-8</prop>
+                <prop key="hibernate.default_schema">${spring.datasource.username}</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.connection.autocommit">false</prop>
+                <prop key="org.hibernate.FlushMode">always</prop>
+                <!--<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</prop>-->
+                <!--<prop key="hibernate.cache.infinispan.cfg">infinispan.xml</prop>-->
+                <prop key="hibernate.cache.infinispan.statistics">true</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean class="com.iMatch.EtlManager" id="etlManager">
+        <property name="mappingConfig" ref="mappingConfig" />
+        <property name="etlService" ref="etlService" />
+        <property name="etlAuthEntity" value="com.iMatch.etl.orm.FileSenseAuth"/>
+        <property name="hexFileSense" ref="hexFileSense" />
+        <property name="etlDebugFile" value="${etl.debug.file}"/>
+
+    </bean>
+
+</beans>

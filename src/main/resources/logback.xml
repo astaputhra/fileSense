@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds" debug="true">
+
+    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%X{User}:%X{Company}:%X{JobId}:%X{XactionId}:%X{Event}:~:%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="IM_DEBUG_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+        </filter>
+        <file>${log.directory}/im_debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.directory}/im_debug.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>25MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%X{User}:%X{Company}:%X{JobId}:%X{XactionId}:%X{Event}:~:%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="com.iMatch" level="DEBUG" />
+
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>iMatch_CIMB_BANK_WINDOW_ONE_CSV_FLOW</name>
+    <description>SCB Bank Statement </description>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#47;</directory>
+    <parameters>
+        <parameter>
+            <name>HexDisplayName</name>
+            <default_value>CIMB_BANK_WINDOW_ONE_CSV_FLOW</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>HexInputFileName</name>
+            <default_value>D:\Local Disk(E)\iMatch_CIMB_Bank\Window_one\SAMPLE_DATAS_FPX_TXT_CSV_FORMAT\WIN1_FPX_BUYER_CSV_FORMAT.txt</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>HexSenseParamText</name>
+            <default_value>-1,FundName^Description^BankID^AsOfdate^AsofTime^TransactionID^Model^TransactionDate^SellerOrderNumber^Buyer^BuyerBank^BuyerAccountNumber^Seller^SellerBank^SellerAccountNo^Amount^SellerID^ProcessType^ProcessedWindowType^TotalAmount</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>HexSourceName</name>
+            <default_value>CIMB_BANK_WINDOW_ONE_CSV_FLOW</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>HexUploadType</name>
+            <default_value>CIMB_BANK_WINDOW_ONE_CSV_FLOW</default_value>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2013&#47;05&#47;17 11:23:09.583</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#47;08&#47;11 14:27:05.656</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>HexgenGenericDBConn</name>
+    <server/>
+    <type>GENERIC</type>
+    <access>Native</access>
+    <database/>
+    <port>1521</port>
+    <username>${HexDb.user}</username>
+    <password>${HexDb.password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>CUSTOM_DRIVER_CLASS</code><attribute>${HexDb.DriverClass}</attribute></attribute>
+      <attribute><code>CUSTOM_URL</code><attribute>${HexDb.ConnURL}</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>HexGenJNDI</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>HexGenJNDI</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>  <hop> <from>Input_Node</from><to>Database join</to><enabled>Y</enabled> </hop>  <hop> <from>Database join</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Add UPD ID 2</from><to>Output_Node</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Data Validator</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Convert</to><enabled>Y</enabled> </hop>  <hop> <from>Convert</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB</from><to>Blocking Step 2 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3</from><to>Blocking Step 2 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2 2</from><to>Blocking Step 2 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 2</from><to>Persist  DB Error 3 2 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 3</from><to>Persist  DB Error 2</to><enabled>Y</enabled> </hop>  <hop> <from>Convert</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Handle Err DB 3 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Add UPD ID 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
+
+var UPLOAD_DATE = new Date();
+var UPD_ERROR_MESSAGE = null;
+var UPD_STATUS = &apos;Y&apos;;
+var REC_VERSION = 1;
+var REC_CREATED_ON = new Date();
+var REC_CREATED_BY = &quot;System&quot;;
+
+var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
+
+var FILENAME=getShortFilename(sourcefile);</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPLOAD_DATE</name>
+        <rename>UPLOAD_DATE</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>UPD_ERROR_MESSAGE</name>
+        <rename>UPD_ERROR_MESSAGE</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>UPD_STATUS</name>
+        <rename>UPD_STATUS</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_VERSION</name>
+        <rename>REC_VERSION</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_CREATED_ON</name>
+        <rename>REC_CREATED_ON</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_CREATED_BY</name>
+        <rename>REC_CREATED_BY</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>FILENAME</name>
+        <rename>FILENAME</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>UPD_IDENTIFIER</name>
+        <rename>UPD_IDENTIFIER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>FILENAME</name>
+        <rename>FILENAME</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>527</xloc>
+      <yloc>236</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>692</xloc>
+      <yloc>233</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step 2 3</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>274</xloc>
+      <yloc>91</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step 2 3 2</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>452</xloc>
+      <yloc>93</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step 2 3 3</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>602</xloc>
+      <yloc>78</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Call DB Procedure</name>
+    <type>DBProc</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <procedure>MoveDataSTGtoUPD</procedure>
+    <lookup>
+      <arg>
+        <name>Upd_identifier</name>
+        <direction>IN</direction>
+        <type>String</type>
+      </arg>
+    </lookup>
+    <result>
+      <name/>
+      <type>Number</type>
+    </result>
+    <auto_commit>Y</auto_commit>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>792</xloc>
+      <yloc>234</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Convert</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+
+
+
+var asofdat, TransDat, Amt, Time;
+if(AsOfdate == null || AsOfdate == &quot;&quot;){
+asofdat = null;
+}else{
+asofdat = str2date(AsOfdate, &apos;MM&#47;dd&#47;yyyy HH:mm:ss&apos;);
+}
+
+if(TransactionDate == null || TransactionDate == &quot;&quot;){
+TransDat = null;
+}else{
+TransDat = str2date(TransactionDate, &apos;MM&#47;dd&#47;yyyy HH:mm:ss&apos;);
+}
+
+
+if(Amount == null || Amount == &quot;&quot;){
+Amt = null;
+}else{
+Amt = str2num(Amount);
+}
+
+&#47;&#47;if(AsofTime == null || AsofTime == &quot;&quot;){
+&#47;&#47;Time = null;
+&#47;&#47;}else{
+&#47;&#47;Time = str2date(AsofTime, &apos;HH:mm:ss&apos;);
+&#47;&#47;}
+var TotAmt;
+if(TotalAmount == null || TotalAmount == &quot;&quot;){
+TotAmt = null;
+}else{
+TotAmt = str2num(TotalAmount);
+}
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>asofdat</name>
+        <rename>asofdat</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>TransDat</name>
+        <rename>TransDat</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Amt</name>
+        <rename>Amt</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>TotAmt</name>
+        <rename>TotAmt</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>280</xloc>
+      <yloc>232</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Data Validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>|</concat_separator>
+       <validator_field><name>TRX_AMOUNT</name>
+<validation_name>TRX_AMOUNT</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>N</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>Number</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Invalid Number</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+       <validator_field><name>DAT_AMOUNT_3</name>
+<validation_name>DAT_AMOUNT_3</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>N</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>Number</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description/>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+       <validator_field><name>PROCESS_TYPE</name>
+<validation_name>PROCESS_TYPE</validation_name>
+<max_length>100</max_length>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Data Too Long</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+       <validator_field><name>SELLER_BANK</name>
+<validation_name>SELLER_BANK</validation_name>
+<max_length>100</max_length>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Data Too Long</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+       <validator_field><name>BUYER_BANK</name>
+<validation_name>BUYER_BANK</validation_name>
+<max_length>100</max_length>
+<min_length/>
+<null_allowed>Y</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Data Too Long</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+       <validator_field><name>TRX_DATETIME</name>
+<validation_name>TRX_DATETIME</validation_name>
+<max_length/>
+<min_length/>
+<null_allowed>N</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>Date</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Invalid Date Format</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>449</xloc>
+      <yloc>236</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database join</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT
+EM.ID AS EVENT_MESSAGE_ID
+FROM IM_EVENT_MESSAGE EM
+INNER JOIN IM_EVENT E ON E.ID = EM.EVENT_ID AND E.EVENT_CODE = &apos;E0001&apos;
+INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002&apos;</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+    </parameter>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>123</xloc>
+      <yloc>232</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Handle Err DB</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
+
+re = &quot;org.pentaho.di.core.exception.KettleDatabaseBatchException:&quot;;
+re2 = &quot;Error updating batch&quot;;
+
+var UPD_ERROR_MESSAGE = UPD_DB_ERRORS.replace(re, &apos;&apos;);
+var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
+
+&#47;&#47;writeToLog(&quot;UPD_ERROR_MESSAGE --------&gt;&gt;&gt;&quot; + UPD_ERROR_MESSAGE);
+
+&#47;&#47;writeToLog(&quot;UPD_DB_ERRORS --------&gt;&gt;&gt;&quot; + UPD_DB_ERRORS);
+
+
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
+        <rename>UPD_ERROR_MESSAGE</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>UPD_IDENTIFIER</name>
+        <rename>UPD_IDENTIFIER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>603</xloc>
+      <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Handle Err DB 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
+
+var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
+
+var fname=getShortFilename(sourcefile);
+
+var Error =&apos;Error   File Name: &apos; +fname +&apos;, Row: &apos;+ UPD_RECORD_NUMBER + &apos;, Message: &apos;   + UPD_ERROR_MESSAGE ;
+
+var UPD_ERROR_MESSAGE=Error;
+var REC_CREATED_ON = new Date();
+var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_IDENTIFIER</name>
+        <rename>UPD_IDENTIFIER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>UPD_ERROR_MESSAGE</name>
+        <rename>UPD_ERROR_MESSAGE</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>REC_CREATED_ON</name>
+        <rename>REC_CREATED_ON</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_CREATED_BY</name>
+        <rename>REC_CREATED_BY</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>276</xloc>
+      <yloc>156</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Handle Err DB 3 2 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
+
+var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
+
+var fname=getShortFilename(sourcefile);
+
+var Error =&apos;Error   File Name: &apos; +fname +&apos;, Row: &apos;+ UPD_RECORD_NUMBER + &apos;, Column : &apos; +UPD_COLUMN_NAME +&apos;, Message: &apos;   + UPD_ERROR_MESSAGE ;
+
+var UPD_ERROR_MESSAGE=Error;
+
+var REC_CREATED_ON = new Date();
+var REC_CREATED_BY = &quot;System&quot;;
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
+        <rename>UPD_ERROR_MESSAGE</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>UPD_IDENTIFIER</name>
+        <rename>UPD_IDENTIFIER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_CREATED_ON</name>
+        <rename>REC_CREATED_ON</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REC_CREATED_BY</name>
+        <rename>REC_CREATED_BY</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>451</xloc>
+      <yloc>150</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Input_Node</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filename>${HexInputFileName}</filename>
+    <filename_field/>
+    <rownum_field>UPD_RECORD_NUMBER</rownum_field>
+    <include_filename>N</include_filename>
+    <separator>^</separator>
+    <enclosure>&quot;</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>FundName</name>
+        <type>String</type>
+        <format/>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>34</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Description</name>
+        <type>String</type>
+        <format/>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>42</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BankID</name>
+        <type>String</type>
+        <format/>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>8</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>AsOfdate</name>
+        <type>String</type>
+        <format>MM&#47;dd&#47;yyyy HH:mm:ss</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>AsofTime</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>TransactionID</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Model</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>TransactionDate</name>
+        <type>String</type>
+        <format>MM&#47;dd&#47;yyyy HH:mm:ss</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>SellerOrderNumber</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Buyer</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>BuyerBank</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>BuyerAccountNumber</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Seller</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>SellerBank</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>SellerAccountNo</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Amount</name>
+        <type>String</type>
+        <format>#</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>SellerID</name>
+        <type>String</type>
+        <format>yyyy&#47;MM&#47;dd HH:mm:ss.SSS</format>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>ProcessType</name>
+        <type>String</type>
+        <format/>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>10</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>ProcessedWindowType</name>
+        <type>String</type>
+        <format/>
+        <currency>Rs.</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>TotalAmount</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>65</xloc>
+      <yloc>232</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Output_Node</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <schema/>
+    <table>im_stg_dat</table>
+    <commit>1</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>FPX_TRX_ID</column_name>
+          <stream_name>FPX_TRX_ID</stream_name>
+        </field>
+        <field>
+          <column_name>MESSEGA_TOKEN</column_name>
+          <stream_name>MESSEGA_TOKEN</stream_name>
+        </field>
+        <field>
+          <column_name>SELLER_ORDER_NO</column_name>
+          <stream_name>SELLER_ORDER_NO</stream_name>
+        </field>
+        <field>
+          <column_name>BUYER</column_name>
+          <stream_name>BUYER</stream_name>
+        </field>
+        <field>
+          <column_name>BUYER_BANK</column_name>
+          <stream_name>BUYER_BANK</stream_name>
+        </field>
+        <field>
+          <column_name>BUYER_ACC_NO</column_name>
+          <stream_name>BUYER_ACC_NO</stream_name>
+        </field>
+        <field>
+          <column_name>SELLER</column_name>
+          <stream_name>SELLER</stream_name>
+        </field>
+        <field>
+          <column_name>SELLER_BANK</column_name>
+          <stream_name>SELLER_BANK</stream_name>
+        </field>
+        <field>
+          <column_name>SELLER_ACC_NO</column_name>
+          <stream_name>SELLER_ACC_NO</stream_name>
+        </field>
+        <field>
+          <column_name>PROCESS_TYPE</column_name>
+          <stream_name>PROCESS_TYPE</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_RECORD_NUMBER</column_name>
+          <stream_name>UPD_RECORD_NUMBER</stream_name>
+        </field>
+        <field>
+          <column_name>TRX_DATETIME</column_name>
+          <stream_name>TRX_DATETIME</stream_name>
+        </field>
+        <field>
+          <column_name>TRX_AMOUNT</column_name>
+          <stream_name>TRX_AMOUNT</stream_name>
+        </field>
+        <field>
+          <column_name>UPLOAD_DATE</column_name>
+          <stream_name>UPLOAD_DATE</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_STATUS</column_name>
+          <stream_name>UPD_STATUS</stream_name>
+        </field>
+        <field>
+          <column_name>REC_VERSION</column_name>
+          <stream_name>REC_VERSION</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_ON</column_name>
+          <stream_name>REC_CREATED_ON</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_BY</column_name>
+          <stream_name>REC_CREATED_BY</stream_name>
+        </field>
+        <field>
+          <column_name>FILENAME</column_name>
+          <stream_name>FILENAME</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_IDENTIFIER</column_name>
+          <stream_name>UPD_IDENTIFIER</stream_name>
+        </field>
+        <field>
+          <column_name>DAT_AMOUNT_3</column_name>
+          <stream_name>DAT_AMOUNT_3</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>605</xloc>
+      <yloc>233</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Persist  DB Error 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <schema/>
+    <table>im_event_log</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>MESSAGE</column_name>
+          <stream_name>UPD_ERROR_MESSAGE</stream_name>
+        </field>
+        <field>
+          <column_name>REC_VERSION</column_name>
+          <stream_name>REC_VERSION</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_ON</column_name>
+          <stream_name>REC_CREATED_ON</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_BY</column_name>
+          <stream_name>REC_CREATED_BY</stream_name>
+        </field>
+        <field>
+          <column_name>EVENT_MESSAGE_ID</column_name>
+          <stream_name>EVENT_MESSAGE_ID</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_IDENTIFIER</column_name>
+          <stream_name>UPD_IDENTIFIER</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>599</xloc>
+      <yloc>14</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Persist  DB Error 3</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <schema/>
+    <table>im_event_log</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>UPD_IDENTIFIER</column_name>
+          <stream_name>UPD_IDENTIFIER</stream_name>
+        </field>
+        <field>
+          <column_name>MESSAGE</column_name>
+          <stream_name>UPD_ERROR_MESSAGE</stream_name>
+        </field>
+        <field>
+          <column_name>EVENT_MESSAGE_ID</column_name>
+          <stream_name>EVENT_MESSAGE_ID</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_ON</column_name>
+          <stream_name>REC_CREATED_ON</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_BY</column_name>
+          <stream_name>REC_CREATED_BY</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>274</xloc>
+      <yloc>18</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Persist  DB Error 3 2 2 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <schema/>
+    <table>im_event_log</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>MESSAGE</column_name>
+          <stream_name>UPD_ERROR_MESSAGE</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_IDENTIFIER</column_name>
+          <stream_name>UPD_IDENTIFIER</stream_name>
+        </field>
+        <field>
+          <column_name>EVENT_MESSAGE_ID</column_name>
+          <stream_name>EVENT_MESSAGE_ID</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_ON</column_name>
+          <stream_name>REC_CREATED_ON</stream_name>
+        </field>
+        <field>
+          <column_name>REC_CREATED_BY</column_name>
+          <stream_name>REC_CREATED_BY</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>452</xloc>
+      <yloc>24</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FundName</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Description</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BankID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AsOfdate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AsofTime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TransactionID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Model</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TransactionDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerOrderNumber</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Buyer</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BuyerBank</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BuyerAccountNumber</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Seller</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerBank</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerAccountNo</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Amount</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ProcessType</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ProcessedWindowType</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>UPD_RECORD_NUMBER</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TotalAmount</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>FundName</name>
+        <rename>FundName</rename>
+        <type>-</type>
+        <length>34</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Description</name>
+        <rename>Description</rename>
+        <type>-</type>
+        <length>42</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BankID</name>
+        <rename>BankID</rename>
+        <type>-</type>
+        <length>8</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>AsOfdate</name>
+        <rename>AsOfdate</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>AsofTime</name>
+        <rename>AsofTime</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TransactionID</name>
+        <rename>TransactionID</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Model</name>
+        <rename>Model</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TransactionDate</name>
+        <rename>TransactionDate</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerOrderNumber</name>
+        <rename>SellerOrderNumber</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Buyer</name>
+        <rename>Buyer</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BuyerBank</name>
+        <rename>BuyerBank</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BuyerAccountNumber</name>
+        <rename>BuyerAccountNumber</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Seller</name>
+        <rename>Seller</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerBank</name>
+        <rename>SellerBank</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerAccountNo</name>
+        <rename>SellerAccountNo</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Amount</name>
+        <rename>Amount</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerID</name>
+        <rename>SellerID</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ProcessType</name>
+        <rename>ProcessType</rename>
+        <type>-</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ProcessedWindowType</name>
+        <rename>ProcessedWindowType</rename>
+        <type>-</type>
+        <length>2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
+        <rename>UPD_RECORD_NUMBER</rename>
+        <type>-</type>
+        <length>10</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>-</type>
+        <length>9</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TotalAmount</name>
+        <rename>TotalAmount</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>205</xloc>
+      <yloc>232</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FundName</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Description</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BankID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AsOfdate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>AsofTime</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TransactionID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Model</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TransactionDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerOrderNumber</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Buyer</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BuyerBank</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>BuyerAccountNumber</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Seller</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerBank</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerAccountNo</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Amount</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SellerID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ProcessType</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ProcessedWindowType</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>UPD_RECORD_NUMBER</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TotalAmount</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>asofdat</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TransDat</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Amt</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>TotAmt</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>AsOfdate</name>
+      </remove>      <remove>        <name>TransactionDate</name>
+      </remove>      <remove>        <name>Amount</name>
+      </remove>      <remove>        <name>FundName</name>
+      </remove>      <remove>        <name>Description</name>
+      </remove>      <remove>        <name>BankID</name>
+      </remove>      <remove>        <name>AsofTime</name>
+      </remove>      <remove>        <name>SellerID</name>
+      </remove>      <remove>        <name>asofdat</name>
+      </remove>      <remove>        <name>ProcessedWindowType</name>
+      </remove>      <remove>        <name>TotalAmount</name>
+      </remove>      <meta>        <name>TransactionID</name>
+        <rename>FPX_TRX_ID</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Model</name>
+        <rename>MESSEGA_TOKEN</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerOrderNumber</name>
+        <rename>SELLER_ORDER_NO</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Buyer</name>
+        <rename>BUYER</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BuyerBank</name>
+        <rename>BUYER_BANK</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BuyerAccountNumber</name>
+        <rename>BUYER_ACC_NO</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Seller</name>
+        <rename>SELLER</rename>
+        <type>-</type>
+        <length>15</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerBank</name>
+        <rename>SELLER_BANK</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SellerAccountNo</name>
+        <rename>SELLER_ACC_NO</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ProcessType</name>
+        <rename>PROCESS_TYPE</rename>
+        <type>-</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
+        <rename>UPD_RECORD_NUMBER</rename>
+        <type>-</type>
+        <length>10</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>-</type>
+        <length>9</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TransDat</name>
+        <rename>TRX_DATETIME</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Amt</name>
+        <rename>TRX_AMOUNT</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.##</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TotAmt</name>
+        <rename>DAT_AMOUNT_3</rename>
+        <type>-</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>##</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
+      <yloc>233</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+      <error>
+        <source_step>Convert</source_step>
+        <target_step>Handle Err DB 3</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>UPD_ERROR_MESSAGE</descriptions_valuename>
+        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator</source_step>
+        <target_step>Handle Err DB 3 2 2</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>UPD_ERROR_MESSAGE</descriptions_valuename>
+        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Database join</source_step>
+        <target_step/>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>UPD_DB_ERRORS</descriptions_valuename>
+        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Output_Node</source_step>
+        <target_step>Handle Err DB</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>UPD_DB_ERRORS</descriptions_valuename>
+        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>
