@@ -7,7 +7,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>HexDisplayName</name>
@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>HexInputFileName</name>
-            <default_value>D:\Local Disk(E)\iMatch_CIMB_Bank\Document\Annexure 24-01-2020\Annexure 4\OTH001 - KIM1080I1.TXT</default_value>
+            <default_value>D&#x3a;&#x5c;Product&#x5c;fileSense&#x5c;KIM1080I120200106.txt</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -42,7 +42,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -59,6 +59,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -87,9 +92,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2014&#47;10&#47;08 12:38:51.199</created_date>
+  <created_date>2014&#x2f;10&#x2f;08 12&#x3a;38&#x3a;51.199</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2014&#47;10&#47;08 14:52:19.831</modified_date>
+  <modified_date>2014&#x2f;10&#x2f;08 14&#x3a;52&#x3a;19.831</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -186,12 +191,32 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB</from><to>Persist  DB Error</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>  <hop> <from>Database join</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 2</from><to>Persist  DB Error 2</to><enabled>Y</enabled> </hop>  <hop> <from>Conversions</from><to>Handle Err DB 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter Columns</from><to>Data Validator</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>  <hop> <from>Add UPD ID 2</from><to>Output_Node</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>  <hop> <from>Input_Node</from><to>Database join</to><enabled>Y</enabled> </hop>  <hop> <from>File_Date</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Input_Node 2</from><to>File_Date</to><enabled>Y</enabled> </hop>  <hop> <from>Conversions</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Conversions</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>Filter Columns</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>
+  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB</from><to>Persist  DB Error</to><enabled>Y</enabled> </hop>
+  <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database join</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB 2</from><to>Persist  DB Error 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Conversions</from><to>Handle Err DB 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter Columns</from><to>Data Validator</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Validator</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add UPD ID 2</from><to>Output_Node</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Validator</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>File_Date</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Input_Node 2</from><to>File_Date</to><enabled>Y</enabled> </hop>
+  <hop> <from>Conversions</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Conversions</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Filter Columns</to><enabled>Y</enabled> </hop>
+  <hop> <from>Input_Node</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Database join</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
     <name>Add UPD ID 2</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -201,19 +226,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-var UPLOAD_DATE = new Date();
-var UPD_ERROR_MESSAGE = null;
-var UPD_STATUS = &apos;Y&apos;;
-var REC_VERSION = 1;
-var REC_CREATED_ON = new Date();
-var REC_CREATED_BY = &quot;System&quot;;
-
-
-&#47;&#47;var BANK_CODE = &quot;MBB&quot;;
-
-
-</jsScript_script>
+        <jsScript_script>var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;var UPLOAD_DATE &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var UPD_ERROR_MESSAGE &#x3d; null&#x3b;&#xa;var UPD_STATUS &#x3d; &#x27;Y&#x27;&#x3b;&#xa;var REC_VERSION &#x3d; 1&#x3b;&#xa;var REC_CREATED_ON &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var REC_CREATED_BY &#x3d; &#x22;System&#x22;&#x3b;&#xa;&#xa;&#xa;&#x2f;&#x2f;var BANK_CODE &#x3d; &#x22;MBB&#x22;&#x3b;&#xa;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_IDENTIFIER</name>
         <rename>UPD_IDENTIFIER</rename>
         <type>String</type>
@@ -269,13 +282,14 @@ var REC_CREATED_BY = &quot;System&quot;;
     <type>BlockingStep</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
       <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>block</prefix>
       <cache_size>5000</cache_size>
       <compress>Y</compress>
@@ -292,6 +306,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <type>DBProc</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -324,6 +339,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -333,37 +349,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var TX_AMT;
-if(trx_amt == null || trx_amt == &quot;&quot;){
-TX_AMT = null;
-}else{
-TX_AMT = str2num(trx_amt);
-}
-
-var BALANCE;
-if(bal == null || bal ==&quot;&quot;){
-BALANCE = null;
-}else{
-BALANCE = str2num(bal);
-}
-
-var TX_DATETIME;
-if(trx_date == null || trx_date == &quot;&quot; || trx_date == &quot;00000000&quot; || trx_date == &quot;SAS&quot;){
-TX_DATETIME = null;
-}else{
-TX_DATETIME = str2date(trx_date, &quot;yyyyMMdd&quot;);
-}
-&#47;&#47; 20131014
-
-var ind = seq_no.indexOf(&quot;SIBS&quot;);
-if(ind &gt; 2){
-SOT_AMOUNT_1 = count;
-}else{
-SOT_AMOUNT_1 = null;
-}
-</jsScript_script>
+        <jsScript_script>var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var TX_AMT&#x3b;&#xa;if&#x28;trx_amt &#x3d;&#x3d; null &#x7c;&#x7c; trx_amt &#x3d;&#x3d; &#x22;&#x22;&#x29;&#x7b;&#xa;TX_AMT &#x3d; null&#x3b;&#xa;&#x7d;else&#x7b;&#xa;TX_AMT &#x3d; str2num&#x28;trx_amt&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var BALANCE&#x3b;&#xa;if&#x28;bal &#x3d;&#x3d; null &#x7c;&#x7c; bal &#x3d;&#x3d;&#x22;&#x22;&#x29;&#x7b;&#xa;BALANCE &#x3d; null&#x3b;&#xa;&#x7d;else&#x7b;&#xa;BALANCE &#x3d; str2num&#x28;bal&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var TX_DATETIME&#x3b;&#xa;if&#x28;trx_date &#x3d;&#x3d; null &#x7c;&#x7c; trx_date &#x3d;&#x3d; &#x22;&#x22; &#x7c;&#x7c; trx_date &#x3d;&#x3d; &#x22;00000000&#x22; &#x7c;&#x7c; trx_date &#x3d;&#x3d; &#x22;SAS&#x22;&#x29;&#x7b;&#xa;TX_DATETIME &#x3d; null&#x3b;&#xa;&#x7d;else&#x7b;&#xa;TX_DATETIME &#x3d; str2date&#x28;trx_date, &#x22;yyyyMMdd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#x2f;&#x2f; 20131014&#xa;&#xa;var ind &#x3d; seq_no.indexOf&#x28;&#x22;SIBS&#x22;&#x29;&#x3b;&#xa;if&#x28;ind &#x3e; 2&#x29;&#x7b;&#xa;SOT_AMOUNT_1 &#x3d; count&#x3b;&#xa;&#x7d;else&#x7b;&#xa;SOT_AMOUNT_1 &#x3d; null&#x3b;&#xa;&#x7d;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>TX_AMT</name>
         <rename>TX_AMT</rename>
         <type>Number</type>
@@ -396,8 +382,8 @@ SOT_AMOUNT_1 = null;
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>357</xloc>
-      <yloc>256</yloc>
+      <xloc>480</xloc>
+      <yloc>255</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -407,6 +393,7 @@ SOT_AMOUNT_1 = null;
     <type>Validator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -414,7 +401,7 @@ SOT_AMOUNT_1 = null;
            </partitioning>
 <validate_all>N</validate_all>
 <concat_errors>N</concat_errors>
-<concat_separator>|</concat_separator>
+<concat_separator>&#x7c;</concat_separator>
        <validator_field><name>TX_REFNO</name>
 <validation_name>TX_REFNO</validation_name>
 <max_length>100</max_length>
@@ -584,6 +571,7 @@ SOT_AMOUNT_1 = null;
     <type>DBJoin</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -591,19 +579,15 @@ SOT_AMOUNT_1 = null;
            </partitioning>
     <connection>HexGenJNDI</connection>
     <rowlimit>0</rowlimit>
-    <sql>SELECT
-EM.ID AS EVENT_MESSAGE_ID
-FROM IM_EVENT_MESSAGE EM
-INNER JOIN IM_EVENT E ON E.ID = EM.EVENT_ID AND E.EVENT_CODE = &apos;E0001&apos;
-INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002&apos;</sql>
+    <sql>SELECT&#xa;EM.ID AS EVENT_MESSAGE_ID&#xa;FROM IM_EVENT_MESSAGE EM&#xa;INNER JOIN IM_EVENT E ON E.ID &#x3d; EM.EVENT_ID AND E.EVENT_CODE &#x3d; &#x27;E0001&#x27;&#xa;INNER JOIN IM_MESSAGE M ON M.ID &#x3d; EM.MESSAGE_ID AND M.MESSAGE_CODE &#x3d; &#x27;M0002&#x27;</sql>
     <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
+    <replace_vars>Y</replace_vars>
     <parameter>
     </parameter>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>109</xloc>
-      <yloc>252</yloc>
+      <xloc>232</xloc>
+      <yloc>251</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -613,6 +597,7 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -622,11 +607,7 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var file_date = field_1.substr(2,8);
-var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
-</jsScript_script>
+        <jsScript_script>var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var file_date &#x3d; field_1.substr&#x28;2,8&#x29;&#x3b;&#xa;var SOT_FILE_DATE &#x3d; str2date&#x28;file_date, &#x22;yyyyMMdd&#x22;&#x29;&#x3b;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>SOT_FILE_DATE</name>
         <rename>SOT_FILE_DATE</rename>
         <type>Date</type>
@@ -652,6 +633,7 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -762,11 +744,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
       </remove>      <remove>        <name>trx_date</name>
       </remove>      <meta>        <name>trx_code</name>
         <rename>TX_CODE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>3</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -774,11 +759,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>trx_desc</name>
         <rename>TX_DESC</rename>
-        <type>-</type>
+        <type>None</type>
         <length>40</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -786,11 +774,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>tx_br</name>
         <rename>TX_BR</rename>
-        <type>-</type>
+        <type>None</type>
         <length>5</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -798,11 +789,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>trx_ref_no</name>
         <rename>TX_REFNO</rename>
-        <type>-</type>
+        <type>None</type>
         <length>20</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -810,11 +804,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>trx_type</name>
         <rename>TX_TYPE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>1</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -822,11 +819,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>teller_id</name>
         <rename>TELLER_ID</rename>
-        <type>-</type>
+        <type>None</type>
         <length>10</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -834,11 +834,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>remarks</name>
         <rename>REMARKS</rename>
-        <type>-</type>
+        <type>None</type>
         <length>80</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -846,11 +849,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>dr_acc</name>
         <rename>DR_AC</rename>
-        <type>-</type>
+        <type>None</type>
         <length>19</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -858,11 +864,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
         <rename>UPD_RECORD_NUMBER</rename>
-        <type>-</type>
+        <type>None</type>
         <length>10</length>
         <precision>0</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -870,11 +879,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
         <rename>EVENT_MESSAGE_ID</rename>
-        <type>-</type>
+        <type>None</type>
         <length>9</length>
         <precision>0</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -882,11 +894,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>TX_AMT</name>
         <rename>TX_AMT</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -894,11 +909,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>BALANCE</name>
         <rename>BALANCE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -906,11 +924,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>UPD_IDENTIFIER</name>
         <rename>UPD_IDENTIFIER</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -918,11 +939,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>SOT_FILE_DATE</name>
         <rename>SOT_FILE_DATE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -930,11 +954,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>acc_no</name>
         <rename>CR_ACC</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -942,11 +969,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>seq_no</name>
         <rename>SOT_REFERENCE_1</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -954,11 +984,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>remarks1</name>
         <rename>SOT_REFERENCE_2</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -966,11 +999,14 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
         <storage_type/>
       </meta>      <meta>        <name>TX_DATETIME</name>
         <rename>TRX_DATETIME</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -989,6 +1025,7 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -998,20 +1035,7 @@ var SOT_FILE_DATE = str2date(file_date, &quot;yyyyMMdd&quot;);
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-re = &quot;org.pentaho.di.core.exception.KettleDatabaseBatchException:&quot;;
-re2 = &quot;Error updating batch&quot;;
-
-var UPD_ERROR_MESSAGE = UPD_DB_ERRORS.replace(re, &apos;&apos;);
-var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
-
-&#47;&#47;writeToLog(&quot;UPD_ERROR_MESSAGE --------&gt;&gt;&gt;&quot; + UPD_ERROR_MESSAGE);
-
-&#47;&#47;writeToLog(&quot;UPD_DB_ERRORS --------&gt;&gt;&gt;&quot; + UPD_DB_ERRORS);
-
-
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;re &#x3d; &#x22;org.pentaho.di.core.exception.KettleDatabaseBatchException&#x3a;&#x22;&#x3b;&#xa;re2 &#x3d; &#x22;Error updating batch&#x22;&#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE &#x3d; UPD_DB_ERRORS.replace&#x28;re, &#x27;&#x27;&#x29;&#x3b;&#xa;var UPD_ERROR_MESSAGE &#x3d; UPD_ERROR_MESSAGE.replace&#x28;re2, &#x27;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f;writeToLog&#x28;&#x22;UPD_ERROR_MESSAGE --------&#x3e;&#x3e;&#x3e;&#x22; &#x2b; UPD_ERROR_MESSAGE&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f;writeToLog&#x28;&#x22;UPD_DB_ERRORS --------&#x3e;&#x3e;&#x3e;&#x22; &#x2b; UPD_DB_ERRORS&#x29;&#x3b;&#xa;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1031,6 +1055,7 @@ var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1040,15 +1065,7 @@ var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var Error =UPD_ERROR_MESSAGE+&apos;  at Row  &apos; +UPD_RECORD_NUMBER;
-
-var UPD_ERROR_MESSAGE=Error;
-
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var Error &#x3d;UPD_ERROR_MESSAGE&#x2b;&#x27;  at Row  &#x27; &#x2b;UPD_RECORD_NUMBER&#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE&#x3d;Error&#x3b;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1063,8 +1080,8 @@ var UPD_ERROR_MESSAGE=Error;
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>349</xloc>
-      <yloc>173</yloc>
+      <xloc>472</xloc>
+      <yloc>172</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1074,6 +1091,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1083,15 +1101,7 @@ var UPD_ERROR_MESSAGE=Error;
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var Error =UPD_ERROR_MESSAGE+ &apos;  at Column  &apos; +UPD_COLUMN_NAME  + &apos;  at Row  &apos; +UPD_RECORD_NUMBER;
-
-var UPD_ERROR_MESSAGE=Error;
-
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var Error &#x3d;UPD_ERROR_MESSAGE&#x2b; &#x27;  at Column  &#x27; &#x2b;UPD_COLUMN_NAME  &#x2b; &#x27;  at Row  &#x27; &#x2b;UPD_RECORD_NUMBER&#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE&#x3d;Error&#x3b;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1117,6 +1127,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1127,7 +1138,7 @@ var UPD_ERROR_MESSAGE=Error;
     <accept_field/>
     <accept_stepname/>
     <separator> </separator>
-    <enclosure>&quot;</enclosure>
+    <enclosure>&#x22;</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
     <header>Y</header>
@@ -1149,7 +1160,7 @@ var UPD_ERROR_MESSAGE=Error;
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${HexInputFileName}</name>
+      <name>&#x24;&#x7b;HexInputFileName&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1439,6 +1450,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1449,7 +1461,7 @@ var UPD_ERROR_MESSAGE=Error;
     <accept_field/>
     <accept_stepname/>
     <separator> </separator>
-    <enclosure>&quot;</enclosure>
+    <enclosure>&#x22;</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
     <header>N</header>
@@ -1471,7 +1483,7 @@ var UPD_ERROR_MESSAGE=Error;
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>${HexInputFileName}</name>
+      <name>&#x24;&#x7b;HexInputFileName&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1536,6 +1548,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1563,6 +1576,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TableOutput</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1688,6 +1702,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1745,6 +1760,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1783,8 +1799,8 @@ var UPD_ERROR_MESSAGE=Error;
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>347</xloc>
-      <yloc>91</yloc>
+      <xloc>470</xloc>
+      <yloc>90</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1794,6 +1810,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1843,6 +1860,7 @@ var UPD_ERROR_MESSAGE=Error;
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1923,11 +1941,14 @@ var UPD_ERROR_MESSAGE=Error;
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>acc_no</name>
         <rename>acc_no</rename>
-        <type>-</type>
+        <type>None</type>
         <length>19</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1935,11 +1956,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>seq_no</name>
         <rename>seq_no</rename>
-        <type>-</type>
+        <type>None</type>
         <length>9</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1947,11 +1971,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_code</name>
         <rename>trx_code</rename>
-        <type>-</type>
+        <type>None</type>
         <length>3</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1959,11 +1986,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_desc</name>
         <rename>trx_desc</rename>
-        <type>-</type>
+        <type>None</type>
         <length>40</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1971,11 +2001,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>tx_br</name>
         <rename>tx_br</rename>
-        <type>-</type>
+        <type>None</type>
         <length>5</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1983,11 +2016,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_ref_no</name>
         <rename>trx_ref_no</rename>
-        <type>-</type>
+        <type>None</type>
         <length>20</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -1995,11 +2031,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_amt</name>
         <rename>trx_amt</rename>
-        <type>-</type>
+        <type>None</type>
         <length>17</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2007,11 +2046,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_type</name>
         <rename>trx_type</rename>
-        <type>-</type>
+        <type>None</type>
         <length>1</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2019,11 +2061,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>bal</name>
         <rename>bal</rename>
-        <type>-</type>
+        <type>None</type>
         <length>17</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2031,11 +2076,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>teller_id</name>
         <rename>teller_id</rename>
-        <type>-</type>
+        <type>None</type>
         <length>10</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2043,11 +2091,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>remarks</name>
         <rename>remarks</rename>
-        <type>-</type>
+        <type>None</type>
         <length>40</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2055,11 +2106,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>dr_acc</name>
         <rename>dr_acc</rename>
-        <type>-</type>
+        <type>None</type>
         <length>19</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2067,11 +2121,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_date</name>
         <rename>trx_date</rename>
-        <type>-</type>
+        <type>None</type>
         <length>8</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2079,11 +2136,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>trx_time</name>
         <rename>trx_time</rename>
-        <type>-</type>
+        <type>None</type>
         <length>6</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2091,11 +2151,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>remarks1</name>
         <rename>remarks1</rename>
-        <type>-</type>
+        <type>None</type>
         <length>40</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2103,11 +2166,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
         <rename>UPD_RECORD_NUMBER</rename>
-        <type>-</type>
+        <type>None</type>
         <length>10</length>
         <precision>0</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2115,11 +2181,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
         <rename>EVENT_MESSAGE_ID</rename>
-        <type>-</type>
+        <type>None</type>
         <length>9</length>
         <precision>0</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2127,11 +2196,14 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>      <meta>        <name>count</name>
         <rename>count</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2139,7 +2211,37 @@ var UPD_ERROR_MESSAGE=Error;
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>202</xloc>
+      <xloc>325</xloc>
+      <yloc>252</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var EVENT_MESSAGE_ID&#x3d;0&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>Integer</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>123</xloc>
       <yloc>253</yloc>
       <draw>Y</draw>
       </GUI>
@@ -2198,4 +2300,5 @@ var UPD_ERROR_MESSAGE=Error;
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>

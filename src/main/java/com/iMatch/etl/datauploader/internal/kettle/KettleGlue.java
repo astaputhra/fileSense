@@ -37,17 +37,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.core.io.ContextResource;
 import org.springframework.core.io.Resource;
-import org.springframework.util.ResourceUtils;
-import org.springframework.web.context.support.ServletContextResource;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
@@ -104,6 +97,9 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
     @Value("#{appProp['spring.datasource.password']}")
     String password;
 
+    @Value("#{appProp['kettleRepoDir']}")
+    String kettleRepoDir;
+
     private KettleDatabaseRepository databaseRepository;
     private KettleFileRepository kettleFileRepository;
     private Map<String, SignatureOfEtlFlow> flowToTypeMapping = new HashMap<String, SignatureOfEtlFlow>();
@@ -156,7 +152,7 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
 
         if (kettleFileRepository == null) {
             String kettleRepoPath;
-            kettleRepoPath = "src\\main\\java\\com\\iMatch\\etl\\KettleRepo";
+            kettleRepoPath = kettleRepoDir;
 //                logger.debug("Path ",repoFSName.getFile().getPath());
             logger.info("Kettle Repository is - {}", kettleRepoPath);
             kettleFileRepository = new KettleFileRepository();
@@ -206,7 +202,6 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
     public void init(){
         int maxConcurrentKTRFlows = 10;
         etlProcessingPermits = new Semaphore(maxConcurrentKTRFlows,true);
-            run();
     }
     @Override
     public void run() {
@@ -241,6 +236,9 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
 
     @Override
 	public List<SignatureOfEtlFlow> getEtlFlowsSignaturesForFileType(SupportedUploadFileTypes fileType) {
+        if(filetypeToSigMaps.size() <= 1) {
+            run();
+        }
         List<SignatureOfEtlFlow> signatureOfEtlFlows = filetypeToSigMaps.get(fileType);
         if (signatureOfEtlFlows == null) signatureOfEtlFlows = new ArrayList<SignatureOfEtlFlow>();
         return signatureOfEtlFlows;
@@ -480,7 +478,6 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
         try {
             String decode = URLDecoder.decode(".\\+?,\\d{1,2}\\W\\w{3}\\W\\d{4},\\d{1,2}\\W\\w{3}\\W\\d{4},\\w,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,.+?,\\w*$", "UTF-8");
 
-            System.out.println(decode);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
@@ -520,7 +517,7 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
 
     @Override
     public String downloadData(String etlFlowName, Map<String, String> params) throws Exception{
-        uploadData(null, null, etlFlowName, null, params);
+//        uploadData(null, null, etlFlowName, null, params);
         return ktr2DownloadFilename.get(etlFlowName.toUpperCase());
     }
 
@@ -537,39 +534,11 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
             logger.trace("got etlProcessingPermit");
             TransMeta transformationMeta = getTransformationMeta(etlFlowName);
 
-
-
-            /* added for JNDI FIX - FIXME */
-          /*  if(HexConstants.POSTGRESQL_JPAVENDORADAPTOR.equals(jpavendoradaptor)){
-                databaseInterface = new PostgreSQLDatabaseMeta();
-                databaseInterface.setPluginId("POSTGRESQL");
-                databaseInterface.setPluginName("PostgreSQL");
-                databaseInterface.getAttributes().setProperty(PostgreSQLDatabaseMeta.ATTRIBUTE_SUPPORTS_TIMESTAMP_DATA_TYPE, "N");
-                databaseInterface.getAttributes().setProperty(PostgreSQLDatabaseMeta.ATTRIBUTE_PRESERVE_RESERVED_WORD_CASE, "N");
-            } else if(HexConstants.ORACLE_JPAVENDORADAPTOR.equals(jpavendoradaptor)){
-                databaseInterface = new OracleDatabaseMeta();
-                databaseInterface.setPluginId("ORACLE");
-                databaseInterface.setPluginName("Oracle");
-            } else {*/
-
-           /* GenericDatabaseMeta genericDb = new GenericDatabaseMeta();
-            genericDb.setName("Hexgen");
-            genericDb.setPassword(password);
-            genericDb.setUsername(dbusername);
-
-            genericDb.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_URL, url);
-            genericDb.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_DRIVER_CLASS, driverClassName);
-            genericDb.setAccessType(DatabaseMeta.TYPE_ACCESS_NATIVE);*/
-            databaseInterface = new MySQLDatabaseMeta();
+            databaseInterface = new GenericDatabaseMeta();
             databaseInterface.setPluginId("GENERIC");
             databaseInterface.setPluginName("Generic database");
-            databaseInterface.setPassword(password);
-            databaseInterface.setUsername(dbusername);
-            databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_URL, url);
             databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATTRIBUTE_SUPPORTS_TIMESTAMP_DATA_TYPE, "N");
-            databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_DRIVER_CLASS, driverClassName);
             databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATTRIBUTE_PRESERVE_RESERVED_WORD_CASE, "N");
-//            }
             databaseInterface.setName("HexGenJNDI");
             databaseInterface.setDatabaseName("HexGenJNDI");
             databaseInterface.setAccessType(DatabaseMeta.TYPE_ACCESS_JNDI);
@@ -579,6 +548,8 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
             databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATTRIBUTE_QUOTE_ALL_FIELDS, "N");
             databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATTRIBUTE_SUPPORTS_BOOLEAN_DATA_TYPE, "N");
             databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATTRIBUTE_USE_POOLING, "Y");
+//            databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_DRIVER_CLASS, "com.mysql.cj.jdbc.Driver");
+//            databaseInterface.getAttributes().setProperty(GenericDatabaseMeta.ATRRIBUTE_CUSTOM_URL, "jdbc:mysql://localhost:3306/imatchcimbbank");
 
             StepMeta errorHandlerStep = (StepMeta)commonStepErrorMeta.getTargetStep().clone();
             errorHandlerStep.setName(errorHandlerStep.getName() + 420);
@@ -623,9 +594,11 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
 
             /* END of JNDI FIX - FIXME */
             trans = new Trans(transformationMeta);
-            if(updTableName != null){
-                TableOutputMeta tableNode = (TableOutputMeta) transformationMeta.findStep("Output_Node").getStepMetaInterface();
-                tableNode.setTablename(updTableName);
+            if(updTableName == null){
+                jobStats.setUploadTempTable(((TableOutputMeta) transformationMeta.findStep("Output_Node").getStepMetaInterface()).getTableName());
+
+                /*TableOutputMeta tableNode = (TableOutputMeta) transformationMeta.findStep("Output_Node").getStepMetaInterface();
+                tableNode.setTablename(updTableName);*/
             }
 
             trans.setParameterValue("HexInputFileName", fileName);
@@ -673,8 +646,8 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
             }
 
         } catch (Exception e) {
-            logger.error("error during etl",e);
-            throw e;
+            logger.error("error during etl {}",e.getMessage());
+            throw new RuntimeException(e.getMessage());
         } finally {
             try {
                 if(trans != null) {

@@ -99,7 +99,7 @@ public class ExcelSignature extends SignatureOfEtlFlow {
     private String printPatterns(){
         StringBuilder sb = new StringBuilder();
         for (SearchPatterns pattern : patterns) {
-            sb.append(pattern.getRegex() + ",");
+            sb.append(pattern.getRegex()).append(",");
         }
         return sb.toString();
 

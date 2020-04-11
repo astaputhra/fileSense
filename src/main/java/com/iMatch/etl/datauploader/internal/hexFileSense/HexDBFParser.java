@@ -73,7 +73,7 @@ public class HexDBFParser extends AbstractHexParser{
     private boolean doColNamesMatch(List<String> colNamesInFile, List<String> colNamesInFlow, boolean isDebug, String expectedFlowname){
         if(colNamesInFile.size() != colNamesInFlow.size()){
             if(expectedFlowname != null){
-                logger.error("ETL_DEBUG: # of columns in expected flow {} is {} while the number of cols in the input file is {}", new String[]{expectedFlowname, colNamesInFlow.size()+"", colNamesInFile.size()+""});
+                logger.error("ETL_DEBUG: # of columns in expected flow {} is {} while the number of cols in the input file is {}", expectedFlowname, colNamesInFlow.size()+"", colNamesInFile.size()+"");
             }
             return false;
         }

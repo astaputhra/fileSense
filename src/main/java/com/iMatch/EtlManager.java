@@ -7,26 +7,24 @@ import com.iMatch.etl.datauploader.ETLServiceProvider;
 import com.iMatch.etl.datauploader.internal.hexFileSense.HexFileSense;
 import com.iMatch.etl.datauploader.internal.hexFileSense.SignatureOfEtlFlow;
 import com.iMatch.etl.exceptions.UploadError;
-import com.iMatch.etl.models.EtlStatusNotificationDO;
+import com.iMatch.etl.internal.UploadStatus;
 import com.iMatch.etl.models.PreETLErrorDO;
+import com.iMatch.etl.orm.IUploadJobMaster;
 import com.iMatch.etl.orm.UploadErrors;
 import com.iMatch.etl.orm.UploadJobMaster;
 import com.iMatch.etl.EtlException;
 import com.iMatch.etl.datauploader.EtlJobStats;
 import com.iMatch.etl.datauploader.internal.MappingConfig;
 import com.iMatch.etl.enums.UploadErrorType;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.sql.DataSource;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -40,6 +38,9 @@ import java.util.regex.Pattern;
 public class EtlManager {
 
     private static final Logger logger = LoggerFactory.getLogger(EtlManager.class);
+
+    @Autowired
+    IUploadJobMaster iUploadJobMaster;
 
     @PersistenceContext(unitName = "entityManagerFactory")
     private EntityManager _em;
@@ -65,89 +66,58 @@ public class EtlManager {
     }
 
     public void runEtlFlow(UploadJobMaster jobMasterEntry, String company, String division) throws EtlException, EtlErrors {
-
-        try {
-            Context initContext = new InitialContext();
-            DataSource ds = (DataSource) initContext.lookup("java:comp/env/jdbc/HexGenJNDI");
-            System.out.println("********"+ds.toString());
-        } catch (NamingException e) {
-//            e.printStackTrace();
-
-
-        }
         Map<String, String> params = new HashMap<String, String>();
         params.put("UPD_COMPANY", company);
         params.put("UPD_DIVISION", division);
-        params.put("ORIGINAL_FILENAME", jobMasterEntry.getOriginalFilename());
+        params.put("ORIGINAL_FILENAME", jobMasterEntry.getFilename());
 //        params.put("HEX_FILE_SENSE_FOLDER", etlDirectoryMonitorDirectory+"/"+company+"/"+division);
-        List<UploadErrors> updErrors;
+        BigDecimal updErrors;
         try {
             logger.debug("Executing etl flow for upload id {}", jobMasterEntry.getUploadId());
             // FIXME restore this to - etlService.uploadData(jobMasterEntry);
             EtlJobStats etlJob = etlService.uploadData(jobMasterEntry.getUploadId(), jobMasterEntry.getFilename(), jobMasterEntry.getEtlFlowName(), jobMasterEntry.getUploadTempTable(), params);
 
             updErrors = findErrorsForUpload(jobMasterEntry.getUploadId());
-            jobMasterEntry.setNumberOfErrors((new BigDecimal(updErrors.size())));
+            jobMasterEntry.setNumberOfErrors(updErrors);
             jobMasterEntry.setNumberOfLinesInput(etlJob.getNumberOfLinesInput());
             jobMasterEntry.setNumberOfLinesOutput(etlJob.getNumberOfLinesOutput());
             jobMasterEntry.setNumberOfRejected(etlJob.getNumberOfRejected());
-            jobMasterEntry.setUploadDate(new LocalDate());
-            _em.persist(jobMasterEntry);
+            jobMasterEntry.setUploadTempTable(jobMasterEntry.getUploadTempTable() == null
+                    ? etlJob.getUploadTempTable()
+                    : jobMasterEntry.getUploadTempTable());
+            if(updErrors.compareTo(BigDecimal.ZERO) == 0){
+                jobMasterEntry.setStatus(UploadStatus.BUSINESS_PROCESS_COMPLETED.toString());
+            }else {
+                jobMasterEntry.setStatus(UploadStatus.BUSINESS_VALIDATION_FAILED.toString());
 
+            }
+            iUploadJobMaster.save(jobMasterEntry);
+            iUploadJobMaster.flush();
         } catch (Exception e) {
+            jobMasterEntry.setStatus(UploadStatus.BUSINESS_PROCESS_ABORTED.toString());
+            iUploadJobMaster.save(jobMasterEntry);
+            iUploadJobMaster.flush();
+            populateImEventLog(jobMasterEntry);
             e.printStackTrace();
             logger.error("Error during kettle flow - {}", e.getMessage());
             throw new EtlException(createPreETLDOFromError(jobMasterEntry, e.getMessage()));
         }
+        logger.info("Completed Kettle Process for {} & {}",jobMasterEntry.getEtlFlowName(),jobMasterEntry.getFilename());
 
-        if (!jobMasterEntry.getNumberOfErrors().equals(BigDecimal.ZERO)) {
-            logger.debug("{} Errors found during ETL, aborting upload",	jobMasterEntry.getNumberOfErrors());
+        populateImEventLog(jobMasterEntry);
 
-            Map<String, Map<String, String>> errorList = new HashMap<String, Map<String, String>>();
-            boolean retryFailed = false;
-            for(UploadErrors error : updErrors) {
-                String row = "null";
-                if(error.getUpdRecordNumber() != null) {
-                    row = error.getUpdRecordNumber().toString();
-                }
-                logger.trace("Setting error for row {}, column {} with message {}", new String[]{ row, error.getUpdColumnName(), error.getUpdErrorMessage() });
-                Map<String, String> errorMsg = new HashMap<String, String>();
-                if(errorList.containsKey(row)) {
-                    errorMsg = errorList.get(row);
-                }
-                if (error.getUpdErrorMessage() != null && error.getUpdErrorMessage().startsWith(RETRY_ETL)) {
-                    int maxRetries = getNoOfRetriesFromUploadError(error.getUpdErrorMessage());
-//                    if (event.getRetried() < maxRetries)
-//                        throw new HexRetryException(HexGenMessages.getSystemErrorMessage(SystemErrorMessages.RETRY_EXCEPTION), maxRetries);
-//                    else {
-//                        errorMsg.put(error.getUpdColumnName(), removeRetryPrefix(error.getUpdErrorMessage()));
-//                        retryFailed = true;
-//                    }
-                } else {
-                    errorMsg.put(error.getUpdColumnName(), error.getUpdErrorMessage());
-                }
-                errorList.put(row, errorMsg);
-            }
-
-            logger.trace("Setting status notification for FAILED upload");
-            EtlStatusNotificationDO etlStatusNotificationDO = new EtlStatusNotificationDO(jobMasterEntry.getUserId(), "FAILED", FilenameUtils.getName(jobMasterEntry.getOriginalFilename()), jobMasterEntry.getArchiveFilename(),
-                    jobMasterEntry.getUploadGenericType(), (new LocalDate()), jobMasterEntry.getNumberOfLinesInput(), jobMasterEntry.getNumberOfErrors(),jobMasterEntry.getNumberOfLinesOutput(),
-                    jobMasterEntry.getExtEmailId(), errorList, jobMasterEntry.getChannel(), jobMasterEntry.getZipFilename(), jobMasterEntry.getUploadId(), jobMasterEntry.getJobId());
-            etlStatusNotificationDO.setCompany(jobMasterEntry.getCompany());
-            etlStatusNotificationDO.setDivision(jobMasterEntry.getDivision());
-            etlStatusNotificationDO.setEtlFlowName(jobMasterEntry.getEtlFlowName());
-            etlStatusNotificationDO.setUploadedBy(jobMasterEntry.getUserId());
-            etlStatusNotificationDO.setChecksum(jobMasterEntry.getChecksum());
-            etlStatusNotificationDO.setFilePath(jobMasterEntry.getFilename());
-            if(jobMasterEntry.getExtEmailId() != null) {
-                String dataEmailIdOut = getEtlDefinitionForFlow(jobMasterEntry.getEtlFlowName(), jobMasterEntry.getCompany(), jobMasterEntry.getDivision()).getDataEmailIdOut();
-                etlStatusNotificationDO.setDataEmailIdOut(dataEmailIdOut);
-            }
-            throw new EtlErrors(etlStatusNotificationDO, retryFailed);
-        }
-
-        logger.info("No errors occurred during ETL");
         return;
+    }
+
+    public void populateImEventLog(UploadJobMaster jobMasterEntry) {
+        String query = "INSERT INTO IM_EVENT_LOG(EVENT_MESSAGE_ID,MESSAGE,ACTUAL_PROCESS_MESSAGE,SOURCE_ID,SOURCE_PAIR_ID,IS_ACTIVE,REC_VERSION," +
+                "REC_CREATED_BY,REC_CREATED_ON,UPD_IDENTIFIER) SELECT EM.ID,\""+jobMasterEntry.getStatus()+"\" ,\""+jobMasterEntry.getStatus()+"\",EM.SOURCE_ID," +
+                "EM.SOURCE_PAIR_ID,'Y',1,'System',NOW(),\""+jobMasterEntry.getUploadId()+"\" FROM IM_EVENT_MESSAGE EM INNER      " +
+                "JOIN IM_EVENT E ON E.ID = EM.EVENT_ID AND E.EVENT_CODE = 'E0001' INNER " +
+                "JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = 'M0002';";
+        logger.debug("TaskManager:INSERTING INTO LOGS ----> "+query);
+        _em.createNativeQuery(query).executeUpdate();
+        _em.flush();
     }
 
     private PreETLErrorDO createPreETLDOFromError(UploadJobMaster jobMasterEntry, String errorMsg) {
@@ -162,12 +132,11 @@ public class EtlManager {
         errorDO.setArchivePath(jobMasterEntry.getArchiveFilename());
         errorDO.setZipFilename(jobMasterEntry.getZipFilename());
         errorDO.setDataEmailIdOut(jobMasterEntry.getDataEmailIdOut());
-        errorDO.setOriginalFileName(jobMasterEntry.getOriginalFilename());
-        errorDO.setParentJobId(jobMasterEntry.getJobId());
+        errorDO.setOriginalFileName(jobMasterEntry.getFilename());
 
         Map<String, String> attributes = new HashMap<String, String>();
         attributes.put("sysErrMsg", errorMsg);
-        attributes.put("errFile", FilenameUtils.getName(jobMasterEntry.getOriginalFilename()));
+        attributes.put("errFile", FilenameUtils.getName(jobMasterEntry.getFilename()));
         errorDO.setError(new UploadError(attributes, UploadErrorType.SYSTEM_ERROR));
         return errorDO;
     }
@@ -294,7 +263,7 @@ public class EtlManager {
         }
         List<IEtlAuth> companyAgnosticFlow = getCompanyAgnosticFlow(etlFlowName, userRole);
         if(companyAgnosticFlow.isEmpty()){
-            logger.error("Unable to find a flow with name '{}' in table {} for company {} and division {}", new String[]{etlFlowName, etlAuthEntity, company, division});
+            logger.error("Unable to find a flow with name '{}' in table {} for company {} and division {}", etlFlowName, etlAuthEntity, company, division);
             return null;
         }
         return populateEtlDefn(companyAgnosticFlow.get(0));
@@ -347,14 +316,12 @@ public class EtlManager {
     }
 
 
-    private List<UploadErrors> findErrorsForUpload(String uploadId) {
-        String queryString = "SELECT uploadErrors FROM UploadErrors uploadErrors WHERE uploadErrors.uploadId = :uploadId";
+    private BigDecimal findErrorsForUpload(String uploadId) {
 
-        logger.trace("Executing query : {}", queryString);
-        Query query = _em.createQuery(queryString);
-        query.setParameter("uploadId", uploadId);
-        logger.trace("Where :uploadId = {}", uploadId);
-        return query.getResultList();
+        int imErrorLogCount = _em.createNativeQuery("SELECT ROW_COUNT FROM im_error_log WHERE upd_identifier = '"+uploadId+"'").getFirstResult();
+        int uploadErrorCount = _em.createNativeQuery("SELECT ROW_COUNT FROM upload_errors WHERE upd_identifier = '"+uploadId+"'").getFirstResult();
+
+        return new BigDecimal(imErrorLogCount+uploadErrorCount);
     }
 
 }

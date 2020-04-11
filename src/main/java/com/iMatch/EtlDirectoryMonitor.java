@@ -7,8 +7,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.integration.file.WatchServiceDirectoryScanner;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -16,6 +18,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 	public static final String TIME_FORMAT = "HH:mm:ss";
@@ -25,6 +28,9 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 	private String configuredCompany;
 	@Value("#{appProp['etl.directory.monitor.division']}")
 	private String configuredDivision;
+
+	@Autowired
+	RestTemplate restTemplate;
 
 //	@Resource(name = "executorService")
 //	private ExecutorService executorService;
@@ -83,7 +89,6 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 //			logger.info("File sensed but we have lost cluster mastership - not processing file {}",recvdFile.getName());
 //			return;
 //		}
-		logger.debug("Got Database lock - file is {}", recvdFile.getName());
 		logger.trace("received file {} for processing, size {}, last-modified {}", recvdFile.getName(),recvdFile.length(),new Date(recvdFile.lastModified()));
 		if(!recvdFile.exists()){
 			logger.trace("File {} does not exist", recvdFile.getName());
@@ -116,10 +121,37 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 				return;
 			}
 		}
+		try {
+			FileUtils.moveFileToDirectory(recvdFile,new File(tmpFolder),true);
+		} catch (IOException e) {
+
+
+		}
+
 		moveOrDeleteOriginalFile(recvdFile);
+
+		sendAPICalToTheServer(recvdFile);
+
 	}
 
-	private void moveOrDeleteOriginalFile(File recvdFile) {
+
+	private boolean sendAPICalToTheServer(File file) {
+		logger.debug("Sending API Call to Validate the File {}",file.getName());
+		try {
+//			FileUtils.moveFileToDirectory(file,new File(tmpFolder),true);
+			String result = restTemplate.getForObject("http://localhost:8080/upload/filePath/" + file.getName(), String.class);
+			return true;
+		} catch (Exception e) {
+			try {
+				FileUtils.forceDelete(new File(tmpFolder+"\\"+file.getName()));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	protected void moveOrDeleteOriginalFile(File recvdFile) {
 		logger.trace("Back-up original file {}, last-modified {}, size {}",recvdFile.getName(), recvdFile.length(), recvdFile.length());
 		try {
 			if (processedDirFile == null)
@@ -162,43 +194,6 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 		}
 		return null;
 	}
-
-
-	String[] getCompanyAndDivisionAndFileName(String copiedPath) {
-		String company = null;
-		String division = null;
-		String fullRoot = root + fileSeparator;
-		String fName = copiedPath.substring(fullRoot.length());
-		if (isCompanyAndDivisionPartOfPath) {
-			String unixFilename = FilenameUtils.separatorsToUnix(fName);
-			String[] split = unixFilename.split("/");
-			if (split.length >= 3){
-				company = split[split.length-3];
-				division = split[split.length-2];
-			}else if(split.length == 2){
-				company = split[0];
-			}
-		} else {
-			company = configuredCompany;
-			division = configuredDivision;
-		}
-		return new String[]{company,division,fName};
-	}
-
-
-//	@Override
-//	public void lostClusterMaster() {
-//		Message<String> operation = MessageBuilder.withPayload("@'filesIn.adapter'.stop()").build();
-//		controlBusChannel.send(operation);
-//		logger.info("Going to STOP the Directory polling");
-//	}
-
-//	@Override
-//	public void gainedClusterMaster() {
-//		Message<String> operation = MessageBuilder.withPayload("@'filesIn.adapter'.start()").build();
-//		controlBusChannel.send(operation);
-//		logger.info("Going to START the Directory polling");
-//	}
 
 	public void setLeafScanner(WatchServiceDirectoryScanner leafScanner) {
 		this.leafScanner = leafScanner;

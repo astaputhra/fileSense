@@ -10,6 +10,7 @@ public enum UploadStatus {
     USER_ABORTED_DUPLICATE,                 // ETL aborted by user as this is duplicate
     BUSINESS_VALIDATION_FAILED,             // ETL aborted by user as this is duplicate
     DUPLICATE_FILE_ALREADY_PENDING_APPROVAL,// ETL aborted by user as this is duplicate
+    DUPLICATE_FILE,                         // ETL aborted by user as this is duplicate
     SYSTEM_ERROR_IN_P1,                     // Business logic on P1 side has run into an exception
     SENT_TO_P1_FOR_PROCESSING,              // Business logic on P1 side has run into an exception
     USER_REJECTED_AT_REVIEW,                // Business logic on P1 side has run into an exception
@@ -18,5 +19,6 @@ public enum UploadStatus {
     BACKDATED_ALREADY_PENDING_APPROVAL,     // ETL aborted by user as this is duplicate
     PENDING_REVIEW,                         // File is under Review
     POST_ETL_ERROR,                         // Aborted due to errors in Post etl process
+    NO_DEF_FOUND,                         // Aborted due to errors in Post etl process
     COMPLIANCE_HARD_BREACH,                 // Record had hard breach
 }

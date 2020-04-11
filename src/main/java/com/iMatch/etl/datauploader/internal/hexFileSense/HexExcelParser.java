@@ -185,7 +185,7 @@ public class HexExcelParser extends AbstractHexParser{
 //        cleanCache(cache);
         for(SignatureOfEtlFlow signatureOfEtlFlow : matchedList){
             if(!(StringUtils.isEmpty(signatureOfEtlFlow.getFileNamePattern())) && filename.contains(signatureOfEtlFlow.getFileNamePattern())){
-                return Arrays.asList(signatureOfEtlFlow);
+                return Collections.singletonList(signatureOfEtlFlow);
             }
         }
         return matchedList;

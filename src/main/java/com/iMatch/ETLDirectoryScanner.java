@@ -1,33 +1,39 @@
 package com.iMatch;
 
+import com.iMatch.controller.FileManagementProcess;
 import com.iMatch.etl.EtlDefinition;
-import com.iMatch.etl.EtlErrors;
-import com.iMatch.etl.EtlException;
 import com.iMatch.etl.helperClasses.FileUtilities;
+import com.iMatch.etl.internal.UploadStatus;
 import com.iMatch.etl.orm.UploadJobMaster;
-import com.iMatch.etl.preprocessmethods.PreProcessTime;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.integration.file.WatchServiceDirectoryScanner;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
  * Created by Astaputhra on 17-03-2020.
  */
+@Transactional
 public class ETLDirectoryScanner extends AbstractEtlMonitor {
 
 //    AbstractEtlMonitor directoryMonitor;
+
+    @Autowired
+    EtlDirectoryMonitor handler;
 
     @Value("#{appProp['etl.directory.monitor.directory']}")
     String root;
@@ -43,6 +49,9 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
 
     @Value("#{appProp['etl.directory.monitor.division']}")
     private String configuredDivision;
+
+    @Value("#{appProp['etl.directory.tmpFolder']}")
+    private String tmpFolder;
 
     private boolean isCompanyAndDivisionPartOfPath = false;
 
@@ -84,17 +93,16 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
         }
     }
 
+
     public void resetScanner() {
-        System.out.println("restarting directory watch service");
         if(leafScanner == null) leafScanner = new WatchServiceDirectoryScanner(root); // FIXME
         leafScanner.stop();
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
 //            nothing
-//        }
+        }
         leafScanner.start();
-        System.out.println("directory watch service restarted");
     }
 
     public void checkScanner(int noOfFilesReceived) {
@@ -147,81 +155,54 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
 
         //if a file is not completely written or to be preProcessed, filter it out
         List<File> incompleteFiles = filteredFiles.stream()
-                .filter(file -> !isCompletelyWritten(file) || preProcess(file))
+                .filter(file -> !isCompletelyWritten(file) || validateTheFile(file))
                 .collect(Collectors.toList());
-        logger.debug("files incompletely written or to be pre-processed will be re-processed in next poll = " + incompleteFiles);
         filteredFiles.removeAll(incompleteFiles);
 
         pendingFiles.removeAll(filteredFiles);
-        logger.debug("files pending after this poll " + pendingFiles);
-        logger.debug("files that will be processed  " + filteredFiles);
-
         return filteredFiles;
     }
 
-    private class PreProcessInputs {
-        EtlDefinition etlDefinition;
-        PreProcessTime[] timeInputs;
+    private boolean validateTheFile(File file) {
+        File tmpFile = null;
+        try {
+            tmpFile = getTempFile(file);
+            String[] companyAndDivision = getCompanyAndDivisionAndFileName(file.getAbsolutePath());
+            EtlDefinition etlDefn = getEtlDefinitionForFile(tmpFile, companyAndDivision[0], companyAndDivision[1]);
+            String checksumSHA1 = FileUtilities.checksumSHA1(file);
+            List<UploadJobMaster> byChecksum = iUploadJobMaster.findByChecksum(checksumSHA1);
 
-        public PreProcessInputs(EtlDefinition etlDefinition, PreProcessTime[] timeInputs) {
-            this.etlDefinition = etlDefinition;
-            this.timeInputs = timeInputs;
+            if(CollectionUtils.isNotEmpty(byChecksum) || etlDefn == null){
+                String status = (etlDefn == null ? UploadStatus.NO_DEF_FOUND : UploadStatus.DUPLICATE_FILE).toString();
+                if(etlDefn ==null) etlDefn = new EtlDefinition();
+
+                UploadJobMaster uploadJobMaster = new UploadJobMaster().populateUploadJobMaster(etlDefn,file.getName(),configuredCompany,configuredDivision,checksumSHA1);
+                uploadJobMaster.setFilename(tmpFile.getPath());
+                iUploadJobMaster.save(uploadJobMaster);
+                iUploadJobMaster.flush();
+
+                logger.trace("Generating upload id for upload job master entry");
+                int id = uploadJobMaster.getId().intValue();
+                //  jobMasterEntry.setUploadId(flowName + id);
+                uploadJobMaster.setUploadId(etlDefn.getEtlFlow() + id + DateTimeFormat.forPattern("ddMMyyyy").print(new LocalDate()));
+                uploadJobMaster.setStatus(status);
+
+                iUploadJobMaster.save(uploadJobMaster);
+                iUploadJobMaster.flush();
+
+                etlManager.populateImEventLog(uploadJobMaster);
+
+                handler.moveOrDeleteOriginalFile(file);
+                logger.debug("Since The File Is Duplicate returning the call");
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return true;
         }
+
     }
-    private Map<File,PreProcessInputs> preProcessMap = new ConcurrentHashMap<>();
-
-    private boolean preProcess(File file) {
-        logger.trace("pre-process-hook file {}, size {}, last-modified {}", file.getName(),file.length(),new Date(file.lastModified()));
-        PreProcessInputs preProcessInputs = preProcessMap.get(file);
-        if (preProcessInputs == null) {
-            EtlDefinition etlDefn = null;
-            try {
-                File tmpFile = getTempFile(file);
-                String[] companyAndDivision = getCompanyAndDivisionAndFileName(file.getAbsolutePath());
-                etlDefn = getEtlDefinitionForFile(tmpFile, companyAndDivision[0], companyAndDivision[1]);
-                if (etlDefn == null) return false;
-//                PreProcessTime[] preProcessTimes = PreProcessTimeFactory.getTimeInputs(etlDefn.getPreProcessMethod(),etlDefn.getPreProcessInput());
-//                preProcessInputs = new PreProcessInputs(etlDefn, preProcessTimes);
-//                preProcessMap.put(file, preProcessInputs);
-            } catch (AbstractEtlMonitor.EtlMonitorException e) {
-                // Do nothing - handler will do the appropriate thing
-                return false;
-            } catch (Exception e) {
-                logger.error("pre-process-hook, error occurred for file " + file.getName(),e);
-                return false;
-            }
-
-            UploadJobMaster uploadJobMaster = new UploadJobMaster();
-            String checksumSHA1=null;
-
-            try {
-                checksumSHA1 = FileUtilities.checksumSHA1(file);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-           uploadJobMaster = uploadJobMaster.populateUploadJobMaster(etlDefn,file.getName(),configuredCompany,configuredDivision,checksumSHA1);
-            uploadJobMaster.setFilename(file.getPath());
-            uploadJobMaster.setFilename(file.getName());
-
-            if(etlDefn.getErrorType() == null){
-                try {
-                    etlManager.runEtlFlow(uploadJobMaster,configuredCompany,configuredDivision);
-                } catch (EtlException e) {
-                    e.printStackTrace();
-                } catch (EtlErrors etlErrors) {
-                    etlErrors.printStackTrace();
-                }
-
-            }
-        }
-        //and then apply
-        EtlDefinition etlDefinition = preProcessInputs.etlDefinition;
-        logger.debug("pre-process-hook - applying method {} with inputs {} for file {}", etlDefinition.getPreProcessMethod().name(), etlDefinition.getPreProcessInput(),file.getName());
-
-        return true;
-    }
-
 
     public void setEnabled(String enabled) {
         this.enabled = enabled;
@@ -236,27 +217,6 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
         if (!"Y".equals(enabled)) {
             setAge(5);
         }
-    }
-
-    String[] getCompanyAndDivisionAndFileName(String copiedPath) {
-        String company = null;
-        String division = null;
-        String fullRoot = root + fileSeparator;
-        String fName = copiedPath.substring(fullRoot.length());
-        if (isCompanyAndDivisionPartOfPath) {
-            String unixFilename = FilenameUtils.separatorsToUnix(fName);
-            String[] split = unixFilename.split("/");
-            if (split.length >= 3){
-                company = split[split.length-3];
-                division = split[split.length-2];
-            }else if(split.length == 2){
-                company = split[0];
-            }
-        } else {
-            company = configuredCompany;
-            division = configuredDivision;
-        }
-        return new String[]{company,division,fName};
     }
 
 }

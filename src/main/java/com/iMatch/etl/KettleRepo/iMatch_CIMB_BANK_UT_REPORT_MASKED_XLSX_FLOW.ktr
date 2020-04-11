@@ -7,7 +7,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#47;</directory>
+    <directory>&#x2f;</directory>
     <parameters>
         <parameter>
             <name>HexDisplayName</name>
@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>HexInputFileName</name>
-            <default_value>D:\Local Disk(E)\iMatch_CIMB_Bank\WMO\Annexure 23-01-2020\Annexure 4 - CIMB Uploads_Daily UT\LHS - (EM Report)\UT Report (All)_masked for HG_WMO.xlsx</default_value>
+            <default_value>D&#x3a;&#x5c;Product&#x5c;fileSense&#x5c;UT_TRXN_24012020.xls</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -42,7 +42,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -59,6 +59,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -87,9 +92,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2020&#47;02&#47;10 17:40:15.554</created_date>
+  <created_date>2020&#x2f;02&#x2f;10 17&#x3a;40&#x3a;15.554</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2020&#47;02&#47;10 17:40:15.554</modified_date>
+  <modified_date>2020&#x2f;02&#x2f;10 17&#x3a;40&#x3a;15.554</modified_date>
   </info>
   <notepads>
   </notepads>
@@ -119,12 +124,34 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Input_Node</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>Database join</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>  <hop> <from>Add UPD ID 2</from><to>Data Validator</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Output_Node</to><enabled>Y</enabled> </hop>  <hop> <from>Convert</from><to>Select values 2</to><enabled>Y</enabled> </hop>  <hop> <from>Convert</from><to>Handle Err DB 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Database join</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Convert</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2</from><to>Blocking Step 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2</from><to>Persist  DB Error 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3</from><to>Blocking Step 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB</from><to>Blocking Step 4</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 4</from><to>Persist  DB Error</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Select values</from><to>Database join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Validator</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add UPD ID 2</from><to>Data Validator</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>
+  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Validator</from><to>Output_Node</to><enabled>Y</enabled> </hop>
+  <hop> <from>Convert</from><to>Select values 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Convert</from><to>Handle Err DB 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Database join</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Convert</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB 3 2</from><to>Blocking Step 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step 2</from><to>Persist  DB Error 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB 3</from><to>Blocking Step 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Handle Err DB</from><to>Blocking Step 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step 4</from><to>Persist  DB Error</to><enabled>Y</enabled> </hop>
+  <hop> <from>Input_Node</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Select values</to><enabled>Y</enabled> </hop>
+  </order>
   <step>
     <name>Add UPD ID 2</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -134,32 +161,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-var UPLOAD_DATE = new Date();
-var UPD_ERROR_MESSAGE = null;
-var UPD_STATUS = &apos;Y&apos;;
-var REC_VERSION = 1;
-var REC_CREATED_ON = new Date();
-var REC_CREATED_BY = &quot;System&quot;;
-
-var EM_REFERENCE_1;
-if(EM_TRANSACTION_TYPE == null || EM_TRANSACTION_TYPE == &quot;&quot;){
-EM_REFERENCE_1 = null;
-}else{
-if(EM_TRANSACTION_TYPE == &quot;COFF&quot;){
-EM_REFERENCE_1 = &quot;Cooling off&quot;;
-}else if(EM_TRANSACTION_TYPE == &quot;RD&quot;){
-EM_REFERENCE_1 = &quot;Redemption&quot;;
-}else if(EM_TRANSACTION_TYPE == &quot;SA&quot;){
-EM_REFERENCE_1 = &quot;Subscription&quot;;
-}else if(EM_TRANSACTION_TYPE == &quot;SASI&quot;){
-EM_REFERENCE_1 = &quot;Subscription (Standing instruction)&quot;;
-}else if(EM_TRANSACTION_TYPE == &quot;SWI&quot;){
-EM_REFERENCE_1 = &quot;Switch-In&quot;;
-}else if(EM_TRANSACTION_TYPE == &quot;SWO&quot;){
-EM_REFERENCE_1 = &quot;Switch-out&quot;;
-}
-}</jsScript_script>
+        <jsScript_script>var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;var UPLOAD_DATE &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var UPD_ERROR_MESSAGE &#x3d; null&#x3b;&#xa;var UPD_STATUS &#x3d; &#x27;Y&#x27;&#x3b;&#xa;var REC_VERSION &#x3d; 1&#x3b;&#xa;var REC_CREATED_ON &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var REC_CREATED_BY &#x3d; &#x22;System&#x22;&#x3b;&#xa;&#xa;var EM_REFERENCE_1&#x3b;&#xa;if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; null &#x7c;&#x7c; EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; null&#x3b;&#xa;&#x7d;else&#x7b;&#xa;if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;COFF&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Cooling off&#x22;&#x3b;&#xa;&#x7d;else if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;RD&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Redemption&#x22;&#x3b;&#xa;&#x7d;else if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;SA&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Subscription&#x22;&#x3b;&#xa;&#x7d;else if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;SASI&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Subscription &#x28;Standing instruction&#x29;&#x22;&#x3b;&#xa;&#x7d;else if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;SWI&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Switch-In&#x22;&#x3b;&#xa;&#x7d;else if&#x28;EM_TRANSACTION_TYPE &#x3d;&#x3d; &#x22;SWO&#x22;&#x29;&#x7b;&#xa;EM_REFERENCE_1 &#x3d; &#x22;Switch-out&#x22;&#x3b;&#xa;&#x7d;&#xa;&#x7d;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_IDENTIFIER</name>
         <rename>UPD_IDENTIFIER</rename>
         <type>String</type>
@@ -221,13 +223,14 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>BlockingStep</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
       <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>block</prefix>
       <cache_size>5000</cache_size>
       <compress>Y</compress>
@@ -244,13 +247,14 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>BlockingStep</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
       <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>block</prefix>
       <cache_size>5000</cache_size>
       <compress>Y</compress>
@@ -267,13 +271,14 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>BlockingStep</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
       <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>block</prefix>
       <cache_size>5000</cache_size>
       <compress>Y</compress>
@@ -290,13 +295,14 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>BlockingStep</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
       <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
       <prefix>block</prefix>
       <cache_size>5000</cache_size>
       <compress>Y</compress>
@@ -313,6 +319,7 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>DBProc</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -345,6 +352,7 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -354,220 +362,7 @@ EM_REFERENCE_1 = &quot;Switch-out&quot;;
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-&#47;&#47;Date Starts
-var BOOK_DATE;
-
-if(BookDate==null||BookDate==&quot;&quot;)
-{
-BOOK_DATE=null;
-}
-else
-{
-BOOK_DATE=str2date(BookDate,&quot;yyyy&#47;MM&#47;dd&quot;);
-}
-
-
-var ORDER_DATE;
-
-if(OrderDate==null||OrderDate==&quot;&quot;)
-{
-ORDER_DATE=null;
-}
-else
-{
-ORDER_DATE=str2date(OrderDate,&quot;yyyy&#47;MM&#47;dd&quot;);
-}
-
-var NAV_DATE;
-
-if(NAVDate==null||NAVDate==&quot;&quot;)
-{
-NAV_DATE=null;
-}
-else
-{
-NAV_DATE=str2date(NAVDate,&quot;yyyy&#47;MM&#47;dd&quot;);
-}
-
-var STATUS_DATE;
-
-if(StatusDate==null||StatusDate==&quot;&quot;)
-{
-STATUS_DATE=null;
-}
-else
-{
-STATUS_DATE=str2date(StatusDate,&quot;yyyy&#47;MM&#47;dd&quot;);
-}
-
-var SETTLEMENT_DATE;
-
-if(SettlementDate==null||SettlementDate==&quot;&quot;)
-{
-SETTLEMENT_DATE=null;
-}
-else
-{
-SETTLEMENT_DATE=str2date(SettlementDate,&quot;yyyy&#47;MM&#47;dd&quot;);
-}
-&#47;&#47; Amount Conversions STARTS
-var NEGOTIATEDRATE;
-
-if(Negotiated_Rate==null||Negotiated_Rate==&quot;&quot;)
-{
-NEGOTIATEDRATE=null;
-}
-else
-{
-NEGOTIATEDRATE=str2num(Negotiated_Rate);
-}
-
-var SERVICE_CHARGE;
-
-if(ServiceCharge==null||ServiceCharge==&quot;&quot;)
-{
-SERVICE_CHARGE=null;
-}
-else
-{
-SERVICE_CHARGE=str2num(ServiceCharge);
-}
-
-var ADMIN_FEE;
-
-if(ADMINFEE==null||ADMINFEE==&quot;&quot;)
-{
-ADMIN_FEE=null;
-}
-else
-{
-ADMIN_FEE=str2num(ADMINFEE);
-}
-
-var GIA;
-
-if(GROSS==null||GROSS==&quot;&quot;)
-{
-GIA=null;
-}
-else
-{
-GIA=str2num(GROSS);
-}
-
-var ADMINFEEGST_TAXAMOUNT;
-
-if(AdminFeeGST_TaxAmt==null||AdminFeeGST_TaxAmt==&quot;&quot;)
-{
-ADMINFEEGST_TAXAMOUNT=null;
-}
-else
-{
-ADMINFEEGST_TAXAMOUNT=str2num(AdminFeeGST_TaxAmt);
-}
-
-
-var NETT_INV_AMT;
-
-if(NettInv_Amt==null||NettInv_Amt==&quot;&quot;)
-{
-NETT_INV_AMT=null;
-}
-else
-{
-NETT_INV_AMT=str2num(NettInv_Amt);
-}
-
-var TRNX_UNIT;
-
-if(TrxnUnit==null||TrxnUnit==&quot;&quot;)
-{
-TRNX_UNIT=null;
-}
-else
-{
-TRNX_UNIT=str2num(TrxnUnit);
-}
-
-var TRNX_PRICE;
-
-if(TrxnPrice==null||TrxnPrice==&quot;&quot;)
-{
-TRNX_PRICE=null;
-}
-else
-{
-TRNX_PRICE=str2num(TrxnPrice);
-}
-
-var BANK_COMMISSION_AMT;
-
-if(BankCommission==null||BankCommission==&quot;&quot;)
-{
-BANK_COMMISSION_AMT=null;
-}
-else
-{
-BANK_COMMISSION_AMT=str2num(BankCommission);
-}
-
-var EXIT_FEE_AMT;
-
-if(EXITFEE==null||EXITFEE==&quot;&quot;)
-{
-EXIT_FEE_AMT=null;
-}
-else
-{
-EXIT_FEE_AMT=str2num(EXITFEE);
-}
-
-var GRATE;
-
-if(GST_TaxRate==null||GST_TaxRate==&quot;&quot;)
-{
-GRATE=null;
-}
-else
-{
-GRATE=str2num(GST_TaxRate);
-}
-
-var GAMT;
-
-if(GST_TaxAmt==null||GST_TaxAmt==&quot;&quot;)
-{
-GAMT=null;
-}
-else
-{
-GAMT=str2num(GST_TaxAmt);
-}
-
-
-var EXCHANGE_RATE;
-
-if(ExchangeRate==null||ExchangeRate==&quot;&quot;)
-{
-EXCHANGE_RATE=null;
-}
-else
-{
-EXCHANGE_RATE=str2num(ExchangeRate);
-}
-
-var EGST_TAXAMT;
-
-if(EAmount==null||EAmount==&quot;&quot;)
-{
-EGST_TAXAMT=null;
-}
-else
-{
-EGST_TAXAMT=str2num(EAmount);
-}</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;&#x2f;&#x2f;Date Starts&#xa;var BOOK_DATE&#x3b;&#xa;&#xa;if&#x28;BookDate&#x3d;&#x3d;null&#x7c;&#x7c;BookDate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;BOOK_DATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;BOOK_DATE&#x3d;str2date&#x28;BookDate,&#x22;yyyy&#x2f;MM&#x2f;dd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#xa;var ORDER_DATE&#x3b;&#xa;&#xa;if&#x28;OrderDate&#x3d;&#x3d;null&#x7c;&#x7c;OrderDate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;ORDER_DATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;ORDER_DATE&#x3d;str2date&#x28;OrderDate,&#x22;yyyy&#x2f;MM&#x2f;dd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var NAV_DATE&#x3b;&#xa;&#xa;if&#x28;NAVDate&#x3d;&#x3d;null&#x7c;&#x7c;NAVDate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;NAV_DATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;NAV_DATE&#x3d;str2date&#x28;NAVDate,&#x22;yyyy&#x2f;MM&#x2f;dd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var STATUS_DATE&#x3b;&#xa;&#xa;if&#x28;StatusDate&#x3d;&#x3d;null&#x7c;&#x7c;StatusDate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;STATUS_DATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;STATUS_DATE&#x3d;str2date&#x28;StatusDate,&#x22;yyyy&#x2f;MM&#x2f;dd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var SETTLEMENT_DATE&#x3b;&#xa;&#xa;if&#x28;SettlementDate&#x3d;&#x3d;null&#x7c;&#x7c;SettlementDate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;SETTLEMENT_DATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;SETTLEMENT_DATE&#x3d;str2date&#x28;SettlementDate,&#x22;yyyy&#x2f;MM&#x2f;dd&#x22;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#x2f;&#x2f; Amount Conversions STARTS&#xa;var NEGOTIATEDRATE&#x3b;&#xa;&#xa;if&#x28;Negotiated_Rate&#x3d;&#x3d;null&#x7c;&#x7c;Negotiated_Rate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;NEGOTIATEDRATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;NEGOTIATEDRATE&#x3d;str2num&#x28;Negotiated_Rate&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var SERVICE_CHARGE&#x3b;&#xa;&#xa;if&#x28;ServiceCharge&#x3d;&#x3d;null&#x7c;&#x7c;ServiceCharge&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;SERVICE_CHARGE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;SERVICE_CHARGE&#x3d;str2num&#x28;ServiceCharge&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var ADMIN_FEE&#x3b;&#xa;&#xa;if&#x28;ADMINFEE&#x3d;&#x3d;null&#x7c;&#x7c;ADMINFEE&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;ADMIN_FEE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;ADMIN_FEE&#x3d;str2num&#x28;ADMINFEE&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var GIA&#x3b;&#xa;&#xa;if&#x28;GROSS&#x3d;&#x3d;null&#x7c;&#x7c;GROSS&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;GIA&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;GIA&#x3d;str2num&#x28;GROSS&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var ADMINFEEGST_TAXAMOUNT&#x3b;&#xa;&#xa;if&#x28;AdminFeeGST_TaxAmt&#x3d;&#x3d;null&#x7c;&#x7c;AdminFeeGST_TaxAmt&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;ADMINFEEGST_TAXAMOUNT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;ADMINFEEGST_TAXAMOUNT&#x3d;str2num&#x28;AdminFeeGST_TaxAmt&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#xa;var NETT_INV_AMT&#x3b;&#xa;&#xa;if&#x28;NettInv_Amt&#x3d;&#x3d;null&#x7c;&#x7c;NettInv_Amt&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;NETT_INV_AMT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;NETT_INV_AMT&#x3d;str2num&#x28;NettInv_Amt&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var TRNX_UNIT&#x3b;&#xa;&#xa;if&#x28;TrxnUnit&#x3d;&#x3d;null&#x7c;&#x7c;TrxnUnit&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;TRNX_UNIT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;TRNX_UNIT&#x3d;str2num&#x28;TrxnUnit&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var TRNX_PRICE&#x3b;&#xa;&#xa;if&#x28;TrxnPrice&#x3d;&#x3d;null&#x7c;&#x7c;TrxnPrice&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;TRNX_PRICE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;TRNX_PRICE&#x3d;str2num&#x28;TrxnPrice&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var BANK_COMMISSION_AMT&#x3b;&#xa;&#xa;if&#x28;BankCommission&#x3d;&#x3d;null&#x7c;&#x7c;BankCommission&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;BANK_COMMISSION_AMT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;BANK_COMMISSION_AMT&#x3d;str2num&#x28;BankCommission&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var EXIT_FEE_AMT&#x3b;&#xa;&#xa;if&#x28;EXITFEE&#x3d;&#x3d;null&#x7c;&#x7c;EXITFEE&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;EXIT_FEE_AMT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;EXIT_FEE_AMT&#x3d;str2num&#x28;EXITFEE&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var GRATE&#x3b;&#xa;&#xa;if&#x28;GST_TaxRate&#x3d;&#x3d;null&#x7c;&#x7c;GST_TaxRate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;GRATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;GRATE&#x3d;str2num&#x28;GST_TaxRate&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var GAMT&#x3b;&#xa;&#xa;if&#x28;GST_TaxAmt&#x3d;&#x3d;null&#x7c;&#x7c;GST_TaxAmt&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;GAMT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;GAMT&#x3d;str2num&#x28;GST_TaxAmt&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#xa;var EXCHANGE_RATE&#x3b;&#xa;&#xa;if&#x28;ExchangeRate&#x3d;&#x3d;null&#x7c;&#x7c;ExchangeRate&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;EXCHANGE_RATE&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;EXCHANGE_RATE&#x3d;str2num&#x28;ExchangeRate&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;var EGST_TAXAMT&#x3b;&#xa;&#xa;if&#x28;EAmount&#x3d;&#x3d;null&#x7c;&#x7c;EAmount&#x3d;&#x3d;&#x22;&#x22;&#x29;&#xa;&#x7b;&#xa;EGST_TAXAMT&#x3d;null&#x3b;&#xa;&#x7d;&#xa;else&#xa;&#x7b;&#xa;EGST_TAXAMT&#x3d;str2num&#x28;EAmount&#x29;&#x3b;&#xa;&#x7d;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>BOOK_DATE</name>
         <rename>BOOK_DATE</rename>
         <type>Date</type>
@@ -695,6 +490,7 @@ EGST_TAXAMT=str2num(EAmount);
     <type>Validator</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -702,7 +498,7 @@ EGST_TAXAMT=str2num(EAmount);
            </partitioning>
 <validate_all>Y</validate_all>
 <concat_errors>N</concat_errors>
-<concat_separator>|</concat_separator>
+<concat_separator>&#x7c;</concat_separator>
        <validator_field><name>EM_CURRENCY</name>
 <validation_name>EM_CURRENCY</validation_name>
 <max_length>3</max_length>
@@ -1548,6 +1344,7 @@ EGST_TAXAMT=str2num(EAmount);
     <type>DBJoin</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1555,13 +1352,9 @@ EGST_TAXAMT=str2num(EAmount);
            </partitioning>
     <connection>HexGenJNDI</connection>
     <rowlimit>0</rowlimit>
-    <sql>SELECT
-EM.ID AS EVENT_MESSAGE_ID
-FROM IM_EVENT_MESSAGE EM
-INNER JOIN IM_EVENT E ON E.ID = EM.EVENT_ID AND E.EVENT_CODE = &apos;E0001&apos;
-INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002&apos;</sql>
+    <sql>SELECT&#xa;EM.ID AS EVENT_MESSAGE_ID&#xa;FROM IM_EVENT_MESSAGE EM&#xa;INNER JOIN IM_EVENT E ON E.ID &#x3d; EM.EVENT_ID AND E.EVENT_CODE &#x3d; &#x27;E0001&#x27;&#xa;INNER JOIN IM_MESSAGE M ON M.ID &#x3d; EM.MESSAGE_ID AND M.MESSAGE_CODE &#x3d; &#x27;M0002&#x27;</sql>
     <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
+    <replace_vars>Y</replace_vars>
     <parameter>
     </parameter>
      <cluster_schema/>
@@ -1573,10 +1366,11 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     </step>
 
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>Dummy &#x28;do nothing&#x29;</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1595,20 +1389,21 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
 <send_true_to>Convert</send_true_to>
-<send_false_to>Dummy (do nothing)</send_false_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>Branch</leftvalue>
- <function>&lt;&gt;</function>
+ <function>&#x3c;&#x3e;</function>
  <rightvalue/>
- <value><name>constant</name><type>String</type><text>Review Date :</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <value><name>constant</name><type>String</type><text>Review Date &#x3a;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -1623,6 +1418,7 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1632,20 +1428,7 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-re = &quot;org.pentaho.di.core.exception.KettleDatabaseBatchException:&quot;;
-re2 = &quot;Error updating batch&quot;;
-
-var UPD_ERROR_MESSAGE = UPD_DB_ERRORS.replace(re, &apos;&apos;);
-var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
-
-&#47;&#47;writeToLog(&quot;UPD_ERROR_MESSAGE --------&gt;&gt;&gt;&quot; + UPD_ERROR_MESSAGE);
-
-&#47;&#47;writeToLog(&quot;UPD_DB_ERRORS --------&gt;&gt;&gt;&quot; + UPD_DB_ERRORS);
-
-
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;re &#x3d; &#x22;org.pentaho.di.core.exception.KettleDatabaseBatchException&#x3a;&#x22;&#x3b;&#xa;re2 &#x3d; &#x22;Error updating batch&#x22;&#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE &#x3d; UPD_DB_ERRORS.replace&#x28;re, &#x27;&#x27;&#x29;&#x3b;&#xa;var UPD_ERROR_MESSAGE &#x3d; UPD_ERROR_MESSAGE.replace&#x28;re2, &#x27;&#x27;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f;writeToLog&#x28;&#x22;UPD_ERROR_MESSAGE --------&#x3e;&#x3e;&#x3e;&#x22; &#x2b; UPD_ERROR_MESSAGE&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f;writeToLog&#x28;&#x22;UPD_DB_ERRORS --------&#x3e;&#x3e;&#x3e;&#x22; &#x2b; UPD_DB_ERRORS&#x29;&#x3b;&#xa;&#xa;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1665,6 +1448,7 @@ var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1674,23 +1458,7 @@ var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-
-
-var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
-
-var fname=getShortFilename(sourcefile);
-
-var Error =&apos;Error   File Name: &apos; +fname +&apos;, Row: &apos;+ UPD_RECORD_NUMBER + &apos;, Column : &apos; +UPD_COLUMN_NAME +&apos;, Message: &apos;   + UPD_ERROR_MESSAGE ;
-
-var UPD_ERROR_MESSAGE=Error;
-
-var REC_CREATED_ON = new Date();
-var REC_CREATED_BY = &quot;System&quot;;
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;&#xa;&#xa;var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var sourcefile&#x3d;getVariable&#x28;&#x22;HexInputFileName&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var fname&#x3d;getShortFilename&#x28;sourcefile&#x29;&#x3b;&#xa;&#xa;var Error &#x3d;&#x27;Error   File Name&#x3a; &#x27; &#x2b;fname &#x2b;&#x27;, Row&#x3a; &#x27;&#x2b; UPD_RECORD_NUMBER &#x2b; &#x27;, Column &#x3a; &#x27; &#x2b;UPD_COLUMN_NAME &#x2b;&#x27;, Message&#x3a; &#x27;   &#x2b; UPD_ERROR_MESSAGE &#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE&#x3d;Error&#x3b;&#xa;&#xa;var REC_CREATED_ON &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var REC_CREATED_BY &#x3d; &#x22;System&#x22;&#x3b;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1728,6 +1496,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1737,23 +1506,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-
-
-var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
-
-var fname=getShortFilename(sourcefile);
-
-var Error =&apos;Error   File Name: &apos; +fname +&apos;, Row: &apos;+ UPD_RECORD_NUMBER + &apos;, Column : &apos; +UPD_COLUMN_NAME +&apos;, Message: &apos;   + UPD_ERROR_MESSAGE ;
-
-var UPD_ERROR_MESSAGE=Error;
-
-var REC_CREATED_ON = new Date();
-var REC_CREATED_BY = &quot;System&quot;;
-</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;&#xa;&#xa;var UPD_IDENTIFIER &#x3d; getVariable&#x28;&#x22;HexUploadID&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var sourcefile&#x3d;getVariable&#x28;&#x22;HexInputFileName&#x22;, &#x22;failed&#x22;&#x29;&#x3b;&#xa;&#xa;var fname&#x3d;getShortFilename&#x28;sourcefile&#x29;&#x3b;&#xa;&#xa;var Error &#x3d;&#x27;Error   File Name&#x3a; &#x27; &#x2b;fname &#x2b;&#x27;, Row&#x3a; &#x27;&#x2b; UPD_RECORD_NUMBER &#x2b; &#x27;, Column &#x3a; &#x27; &#x2b;UPD_COLUMN_NAME &#x2b;&#x27;, Message&#x3a; &#x27;   &#x2b; UPD_ERROR_MESSAGE &#x3b;&#xa;&#xa;var UPD_ERROR_MESSAGE&#x3d;Error&#x3b;&#xa;&#xa;var REC_CREATED_ON &#x3d; new Date&#x28;&#x29;&#x3b;&#xa;var REC_CREATED_BY &#x3d; &#x22;System&#x22;&#x3b;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
         <rename>UPD_ERROR_MESSAGE</rename>
         <type>String</type>
@@ -1791,6 +1544,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -1812,7 +1566,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${HexInputFileName}</name>
+      <name>&#x24;&#x7b;HexInputFileName&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1964,7 +1718,7 @@ var REC_CREATED_BY = &quot;System&quot;;
         <group/>
       </field>
       <field>
-        <name>Customer&apos;s Ic</name>
+        <name>Customer&#x27;s Ic</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2036,7 +1790,7 @@ var REC_CREATED_BY = &quot;System&quot;;
         <group/>
       </field>
       <field>
-        <name>Negotiated Rate (%)</name>
+        <name>Negotiated Rate &#x28;&#x25;&#x29;</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2168,8 +1922,7 @@ var REC_CREATED_BY = &quot;System&quot;;
         <group/>
       </field>
       <field>
-        <name>Payment Account&#47;
-Cheque No</name>
+        <name>Payment Account&#x2f;&#xa;Cheque No</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2205,7 +1958,7 @@ Cheque No</name>
         <group/>
       </field>
       <field>
-        <name>Exit Fee Amount&#47;Sales Charge&#47; Fee Amount</name>
+        <name>Exit Fee Amount&#x2f;Sales Charge&#x2f; Fee Amount</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2277,7 +2030,7 @@ Cheque No</name>
         <group/>
       </field>
       <field>
-        <name>GST Tax Amt (Equivalent)</name>
+        <name>GST Tax Amt &#x28;Equivalent&#x29;</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2352,8 +2105,8 @@ Cheque No</name>
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>124</xloc>
-      <yloc>367</yloc>
+      <xloc>36</xloc>
+      <yloc>366</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2363,6 +2116,7 @@ Cheque No</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -2604,6 +2358,7 @@ Cheque No</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -2661,6 +2416,7 @@ Cheque No</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -2718,6 +2474,7 @@ Cheque No</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -2775,6 +2532,7 @@ Cheque No</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -2828,7 +2586,7 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Customer&apos;s Ic</name>
+      </field>      <field>        <name>Customer&#x27;s Ic</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2852,7 +2610,7 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Negotiated Rate (%)</name>
+      </field>      <field>        <name>Negotiated Rate &#x28;&#x25;&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2896,8 +2654,7 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Payment Account&#47;
-Cheque No</name>
+      </field>      <field>        <name>Payment Account&#x2f;&#xa;Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2909,7 +2666,7 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Exit Fee Amount&#47;Sales Charge&#47; Fee Amount</name>
+      </field>      <field>        <name>Exit Fee Amount&#x2f;Sales Charge&#x2f; Fee Amount</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2933,7 +2690,7 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GST Tax Amt (Equivalent)</name>
+      </field>      <field>        <name>GST Tax Amt &#x28;Equivalent&#x29;</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2957,14 +2714,21 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>Branch</name>
         <rename>Branch</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2972,11 +2736,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Fund Name</name>
         <rename>Fund Name</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2984,11 +2751,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Fund Code</name>
         <rename>Fund Code</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -2996,11 +2766,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Currency</name>
         <rename>Currency</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3008,11 +2781,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Book Date</name>
         <rename>BookDate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3020,11 +2796,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Order Date</name>
         <rename>OrderDate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3032,11 +2811,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>NAV Date</name>
         <rename>NAVDate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3044,11 +2826,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Account No.</name>
         <rename>Account No.</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3056,11 +2841,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Joint Indicator</name>
         <rename>Joint Indicator</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3068,11 +2856,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>pledge Indicator</name>
         <rename>pledge Indicator</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3080,11 +2871,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Staff</name>
         <rename>Staff</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3092,23 +2886,29 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Customer Name</name>
         <rename>Customer Name</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>Customer&apos;s Ic</name>
-        <rename>Customer&apos;s Ic</rename>
-        <type>-</type>
+      </meta>      <meta>        <name>Customer&#x27;s Ic</name>
+        <rename>Customer&#x27;s Ic</rename>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3116,11 +2916,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Transaction No.</name>
         <rename>Transaction No.</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3128,11 +2931,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Transaction Type</name>
         <rename>Transaction Type</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3140,11 +2946,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Invest Scheme</name>
         <rename>Invest Scheme</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3152,11 +2961,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Promotion Code</name>
         <rename>Promotion Code</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3164,23 +2976,29 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Cust Group</name>
         <rename>Cust Group</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>Negotiated Rate (%)</name>
+      </meta>      <meta>        <name>Negotiated Rate &#x28;&#x25;&#x29;</name>
         <rename>Negotiated_Rate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3188,11 +3006,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Service Charge</name>
         <rename>ServiceCharge</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3200,11 +3021,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Admin Fee </name>
         <rename>ADMINFEE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3212,11 +3036,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Gross Inv Amt</name>
         <rename>GROSS</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3224,11 +3051,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Nett Inv Amt</name>
         <rename>NettInv_Amt</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3236,11 +3066,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Trxn Unit</name>
         <rename>TrxnUnit</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3248,11 +3081,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Trxn Price</name>
         <rename>TrxnPrice</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3260,11 +3096,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Status</name>
         <rename>Status</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3272,11 +3111,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Status Date</name>
         <rename>StatusDate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3284,11 +3126,14 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Status By</name>
         <rename>Status By</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3296,25 +3141,29 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>Create By</name>
         <rename>Create By</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>Payment Account&#47;
-Cheque No</name>
-        <rename>Payment Account&#47;
-Cheque No</rename>
-        <type>-</type>
+      </meta>      <meta>        <name>Payment Account&#x2f;&#xa;Cheque No</name>
+        <rename>Payment Account&#x2f;&#xa;Cheque No</rename>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3322,11 +3171,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>Sett. Mode</name>
         <rename>Sett. Mode</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3334,23 +3186,29 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>Bank Commission Amount</name>
         <rename>BankCommission</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>Exit Fee Amount&#47;Sales Charge&#47; Fee Amount</name>
+      </meta>      <meta>        <name>Exit Fee Amount&#x2f;Sales Charge&#x2f; Fee Amount</name>
         <rename>EXITFEE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3358,11 +3216,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>GST Tax Code</name>
         <rename>GST Tax Code</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3370,11 +3231,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>GST Invoice No.</name>
         <rename>GST Invoice No.</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3382,11 +3246,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>GST Tax Rate</name>
         <rename>GST_TaxRate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3394,11 +3261,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>GST Tax Amt</name>
         <rename>GST_TaxAmt</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3406,23 +3276,29 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>Exchange Rate</name>
         <rename>ExchangeRate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>GST Tax Amt (Equivalent)</name>
+      </meta>      <meta>        <name>GST Tax Amt &#x28;Equivalent&#x29;</name>
         <rename>EAmount</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3430,11 +3306,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>Admin Fee GST Tax Amt</name>
         <rename>AdminFeeGST_TaxAmt</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3442,11 +3321,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>Settlement Status</name>
         <rename>Settlement Status</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3454,11 +3336,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>settlement Date</name>
         <rename>SettlementDate</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3466,11 +3351,14 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
         <rename>UPD_RECORD_NUMBER</rename>
-        <type>-</type>
+        <type>None</type>
         <length>10</length>
         <precision>0</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3478,11 +3366,29 @@ Cheque No</rename>
         <storage_type/>
       </meta>      <meta>        <name>FILE_NAME</name>
         <rename>FILE_NAME</rename>
-        <type>-</type>
+        <type>None</type>
         <length>100</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>None</type>
+        <length>16</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -3501,36 +3407,21 @@ Cheque No</rename>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>Branch</name>
+    <fields>      <field>        <name>ADMINFEE</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Fund Name</name>
+      </field>      <field>        <name>ADMINFEEGST_TAXAMOUNT</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Fund Code</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Currency</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>BookDate</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>OrderDate</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NAVDate</name>
+      </field>      <field>        <name>ADMIN_FEE</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3538,96 +3429,15 @@ Cheque No</rename>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Joint Indicator</name>
+      </field>      <field>        <name>AdminFeeGST_TaxAmt</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>pledge Indicator</name>
+      </field>      <field>        <name>BANK_COMMISSION_AMT</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>Staff</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Customer Name</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Customer&apos;s Ic</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Transaction No.</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Transaction Type</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Invest Scheme</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Promotion Code</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Cust Group</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Negotiated_Rate</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ServiceCharge</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ADMINFEE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>GROSS</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NettInv_Amt</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TrxnUnit</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TrxnPrice</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Status</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>StatusDate</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Status By</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Create By</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Payment Account&#47;
-Cheque No</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Sett. Mode</name>
+      </field>      <field>        <name>BOOK_DATE</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3635,27 +3445,31 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>EXITFEE</name>
+      </field>      <field>        <name>BookDate</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GST Tax Code</name>
+      </field>      <field>        <name>Branch</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GST Invoice No.</name>
+      </field>      <field>        <name>Create By</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GST_TaxRate</name>
+      </field>      <field>        <name>Currency</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GST_TaxAmt</name>
+      </field>      <field>        <name>Cust Group</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>ExchangeRate</name>
+      </field>      <field>        <name>Customer Name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Customer&#x27;s Ic</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3663,7 +3477,139 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>AdminFeeGST_TaxAmt</name>
+      </field>      <field>        <name>EGST_TAXAMT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EXCHANGE_RATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EXITFEE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>EXIT_FEE_AMT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ExchangeRate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>FILE_NAME</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Fund Code</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Fund Name</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GAMT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GIA</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GRATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GROSS</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GST Invoice No.</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GST Tax Code</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GST_TaxAmt</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GST_TaxRate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Invest Scheme</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Joint Indicator</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NAVDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NAV_DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NEGOTIATEDRATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NETT_INV_AMT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Negotiated_Rate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NettInv_Amt</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ORDER_DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>OrderDate</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Payment Account&#x2f;&#xa;Cheque No</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Promotion Code</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SERVICE_CHARGE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>SETTLEMENT_DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>STATUS_DATE</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>ServiceCharge</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Sett. Mode</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3675,63 +3621,19 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>UPD_RECORD_NUMBER</name>
+      </field>      <field>        <name>Staff</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>FILE_NAME</name>
+      </field>      <field>        <name>Status</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
+      </field>      <field>        <name>Status By</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>BOOK_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ORDER_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NAV_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>STATUS_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SETTLEMENT_DATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SERVICE_CHARGE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ADMINFEEGST_TAXAMOUNT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NEGOTIATEDRATE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ADMIN_FEE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>GIA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>NETT_INV_AMT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TRNX_UNIT</name>
+      </field>      <field>        <name>StatusDate</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3739,27 +3641,31 @@ Cheque No</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>BANK_COMMISSION_AMT</name>
+      </field>      <field>        <name>TRNX_UNIT</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>EXIT_FEE_AMT</name>
+      </field>      <field>        <name>Transaction No.</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GRATE</name>
+      </field>      <field>        <name>Transaction Type</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>GAMT</name>
+      </field>      <field>        <name>TrxnPrice</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>EXCHANGE_RATE</name>
+      </field>      <field>        <name>TrxnUnit</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>EGST_TAXAMT</name>
+      </field>      <field>        <name>UPD_RECORD_NUMBER</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>pledge Indicator</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3783,530 +3689,16 @@ Cheque No</name>
       </remove>      <remove>        <name>GST_TaxAmt</name>
       </remove>      <remove>        <name>ExchangeRate</name>
       </remove>      <remove>        <name>EAmount</name>
-      </remove>      <meta>        <name>Branch</name>
-        <rename>EM_BRANCH</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Fund Name</name>
-        <rename>EM_FUND_NAME</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Fund Code</name>
-        <rename>EM_FUND_CODE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Currency</name>
-        <rename>EM_CURRENCY</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Account No.</name>
-        <rename>EM_ACCOUNT_NO</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Joint Indicator</name>
-        <rename>EM_JOINT_INDICATOR</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>pledge Indicator</name>
-        <rename>EM_PLEDGE_INDICATOR</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Staff</name>
-        <rename>EM_STAFF</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Customer Name</name>
-        <rename>EM_CUSTOMER_NAME</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Customer&apos;s Ic</name>
-        <rename>EM_CUSTOMER_IC</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Transaction No.</name>
-        <rename>EM_TRANSACTION_NUMBER</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Transaction Type</name>
-        <rename>EM_TRANSACTION_TYPE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Invest Scheme</name>
-        <rename>EM_INVEST_SCHEME</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Promotion Code</name>
-        <rename>EM_PROMOTION_CODE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Cust Group</name>
-        <rename>EM_CUST_GROUP</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>GIA</name>
-        <rename>EM_GROSS_INV_AMT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>NETT_INV_AMT</name>
-        <rename>EM_NETT_INV_AMT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TRNX_UNIT</name>
-        <rename>EM_TRXN_UNIT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TRNX_PRICE</name>
-        <rename>EM_TRXN_PRICE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.####</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Status</name>
-        <rename>EM_STATUS</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Status By</name>
-        <rename>EM_STATUS_BY</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Create By</name>
-        <rename>EM_CREATE_BY</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Payment Account&#47;
-Cheque No</name>
-        <rename>EM_PAYMENT_ACCOUNT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Sett. Mode</name>
-        <rename>EM_SETT_MODE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>BANK_COMMISSION_AMT</name>
-        <rename>EM_BANK_COMMISSION_AMOUNT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EXIT_FEE_AMT</name>
-        <rename>EM_EXIT_FEE_AMOUNT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>GST Tax Code</name>
-        <rename>EM_GST_TAX_CODE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>GST Invoice No.</name>
-        <rename>EM_GST_INVOICE_NO</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>GRATE</name>
-        <rename>EM_GST_TAX_RATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>GAMT</name>
-        <rename>EM_GST_TAX_AMT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EXCHANGE_RATE</name>
-        <rename>EM_EXCHANGE_RATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EGST_TAXAMT</name>
-        <rename>EM_GST_TAX_AMT_EQU</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Settlement Status</name>
-        <rename>EM_SETTLEMENT_STATUS</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
-        <rename>UPD_RECORD_NUMBER</rename>
-        <type>-</type>
-        <length>10</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FILE_NAME</name>
-        <rename>FILE_NAME</rename>
-        <type>-</type>
-        <length>100</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
-        <rename>EVENT_MESSAGE_ID</rename>
-        <type>-</type>
-        <length>9</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>BOOK_DATE</name>
-        <rename>EM_BOOK_DATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>ORDER_DATE</name>
-        <rename>EM_ORDER_DATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>NAV_DATE</name>
-        <rename>EM_NAV_DATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>STATUS_DATE</name>
-        <rename>EM_STATUS_DATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>SETTLEMENT_DATE</name>
-        <rename>EM_SETTLEMENT_DATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>SERVICE_CHARGE</name>
-        <rename>EM_SERVICE_CHARGE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>ADMINFEEGST_TAXAMOUNT</name>
+      </remove>      <meta>        <name>ADMINFEEGST_TAXAMOUNT</name>
         <rename>EM_ADMIN_FEE_GST</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>NEGOTIATEDRATE</name>
-        <rename>EM_NEGOTIATED_RATE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>.###</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -4314,11 +3706,659 @@ Cheque No</name>
         <storage_type/>
       </meta>      <meta>        <name>ADMIN_FEE</name>
         <rename>EM_ADMIN_FEE</rename>
-        <type>-</type>
+        <type>None</type>
         <length>-2</length>
         <precision>-2</precision>
-        <conversion_mask>.##</conversion_mask>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Account No.</name>
+        <rename>EM_ACCOUNT_NO</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BANK_COMMISSION_AMT</name>
+        <rename>EM_BANK_COMMISSION_AMOUNT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>BOOK_DATE</name>
+        <rename>EM_BOOK_DATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Branch</name>
+        <rename>EM_BRANCH</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Create By</name>
+        <rename>EM_CREATE_BY</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Currency</name>
+        <rename>EM_CURRENCY</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Cust Group</name>
+        <rename>EM_CUST_GROUP</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Customer Name</name>
+        <rename>EM_CUSTOMER_NAME</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Customer&#x27;s Ic</name>
+        <rename>EM_CUSTOMER_IC</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EGST_TAXAMT</name>
+        <rename>EM_GST_TAX_AMT_EQU</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EXCHANGE_RATE</name>
+        <rename>EM_EXCHANGE_RATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EXIT_FEE_AMT</name>
+        <rename>EM_EXIT_FEE_AMOUNT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>FILE_NAME</name>
+        <rename>FILE_NAME</rename>
+        <type>None</type>
+        <length>100</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Fund Code</name>
+        <rename>EM_FUND_CODE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Fund Name</name>
+        <rename>EM_FUND_NAME</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>GAMT</name>
+        <rename>EM_GST_TAX_AMT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>GIA</name>
+        <rename>EM_GROSS_INV_AMT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>GRATE</name>
+        <rename>EM_GST_TAX_RATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>GST Invoice No.</name>
+        <rename>EM_GST_INVOICE_NO</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>GST Tax Code</name>
+        <rename>EM_GST_TAX_CODE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Invest Scheme</name>
+        <rename>EM_INVEST_SCHEME</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Joint Indicator</name>
+        <rename>EM_JOINT_INDICATOR</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>NAV_DATE</name>
+        <rename>EM_NAV_DATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>NEGOTIATEDRATE</name>
+        <rename>EM_NEGOTIATED_RATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>NETT_INV_AMT</name>
+        <rename>EM_NETT_INV_AMT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ORDER_DATE</name>
+        <rename>EM_ORDER_DATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Payment Account&#x2f;&#xa;Cheque No</name>
+        <rename>EM_PAYMENT_ACCOUNT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Promotion Code</name>
+        <rename>EM_PROMOTION_CODE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SERVICE_CHARGE</name>
+        <rename>EM_SERVICE_CHARGE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>SETTLEMENT_DATE</name>
+        <rename>EM_SETTLEMENT_DATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>STATUS_DATE</name>
+        <rename>EM_STATUS_DATE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Sett. Mode</name>
+        <rename>EM_SETT_MODE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Settlement Status</name>
+        <rename>EM_SETTLEMENT_STATUS</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Staff</name>
+        <rename>EM_STAFF</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Status</name>
+        <rename>EM_STATUS</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Status By</name>
+        <rename>EM_STATUS_BY</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TRNX_PRICE</name>
+        <rename>EM_TRXN_PRICE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>TRNX_UNIT</name>
+        <rename>EM_TRXN_UNIT</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>.&#x23;&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Transaction No.</name>
+        <rename>EM_TRANSACTION_NUMBER</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Transaction Type</name>
+        <rename>EM_TRANSACTION_TYPE</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
+        <rename>UPD_RECORD_NUMBER</rename>
+        <type>None</type>
+        <length>10</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>pledge Indicator</name>
+        <rename>EM_PLEDGE_INDICATOR</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>Integer</type>
+        <length>9</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
         <decimal_symbol/>
         <grouping_symbol/>
@@ -4328,6 +4368,36 @@ Cheque No</name>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>511</xloc>
       <yloc>372</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var EVENT_MESSAGE_ID &#x3d; 0&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>Integer</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>119</xloc>
+      <yloc>366</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -4373,4 +4443,5 @@ Cheque No</name>
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+
 </transformation>

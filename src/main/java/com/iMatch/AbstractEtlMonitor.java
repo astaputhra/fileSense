@@ -1,10 +1,9 @@
 package com.iMatch;
 
 import com.iMatch.etl.EtlDefinition;
-import com.iMatch.etl.enums.Channel;
 import com.iMatch.etl.datauploader.internal.hexFileSense.SignatureOfEtlFlow;
 import com.iMatch.etl.enums.UploadErrorType;
-import com.iMatch.etl.exceptions.UploadError;
+import com.iMatch.etl.orm.IUploadJobMaster;
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
@@ -34,11 +33,31 @@ import java.util.zip.ZipInputStream;
 //import org.apache.commons.lang3.StringUtils;
 
 public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
+
+    @Value("#{appProp['etl.directory.monitor.directory']}")
+    protected String root;
+
+    @Autowired
+    protected IUploadJobMaster iUploadJobMaster;
+
+    @Value("#{appProp['etl.directory.scannerResetThreshold']}")
+    int scannerResetThreshold;
+
+    @Value("#{appProp['etl.directory.processed']}")
+    protected String processedDir;
+
+    @Value("#{appProp['etl.directory.monitor.company']}")
+    protected String configuredCompany;
+
+    @Value("#{appProp['etl.directory.monitor.division']}")
+    protected String configuredDivision;
+
+    @Value("#{appProp['etl.directory.tmpFolder']}")
+    protected String tmpFolder;
+
+    private boolean isCompanyAndDivisionPartOfPath = false;
+
     private static final Logger logger = LoggerFactory.getLogger(AbstractEtlMonitor.class);
-    public static final String STOP_SENSING = "STOP";
-    public static final String START_SENSING = "START";
-    public static final String SENSE_STATE = "SENSE_STATE";
-    public static final String MODULE = "ETL";
 
     protected String fileSeparator = System.getProperty("file.separator");
 
@@ -244,10 +263,6 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
 
     }
 
-    protected void pushToHandler(EtlDefinition etlDefn, File file, UploadError error, String zipFilename, String company, String division, String originalFilename, String fileChecksum, Channel channel) {
-
-    }
-
     protected boolean isFileBlacklisted(String filename) {
         if (StringUtils.isEmpty(blacklistedFilesRegex))
             return false;
@@ -277,5 +292,26 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
         if(baseName.length() < 3) baseName += "xyz";
         tmpFile = File.createTempFile(baseName, "." + FilenameUtils.getExtension(file.getName()));
         return tmpFile;
+    }
+
+    protected String[] getCompanyAndDivisionAndFileName(String copiedPath) {
+        String company = null;
+        String division = null;
+        String fullRoot = root + fileSeparator;
+        String fName = copiedPath.substring(fullRoot.length());
+        if (isCompanyAndDivisionPartOfPath) {
+            String unixFilename = FilenameUtils.separatorsToUnix(fName);
+            String[] split = unixFilename.split("/");
+            if (split.length >= 3){
+                company = split[split.length-3];
+                division = split[split.length-2];
+            }else if(split.length == 2){
+                company = split[0];
+            }
+        } else {
+            company = configuredCompany;
+            division = configuredDivision;
+        }
+        return new String[]{company,division,fName};
     }
 }

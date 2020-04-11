@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -19,9 +18,7 @@
 
     <util:properties id="appProp" location="classpath:application.properties" />
 
-    <context:component-scan base-package="com.iMatch.hexagon" />
-
-    <!--Setup the common lib based File listener-->
+    <context:component-scan base-package="com.iMatch" />
 
     <bean class="org.springframework.integration.file.WatchServiceDirectoryScanner" id="leafScanner">
         <constructor-arg name="directory" value="${etl.directory.monitor.directory}"/>
@@ -48,13 +45,6 @@
 
     <int:service-activator input-channel="filesIn" ref="handler" auto-startup="true" method="handler"/>
 
-    <bean id="hexgenDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
-        <property name="driverClassName" value="${spring.datasource.driverClassName}"/>
-        <property name="url" value="${spring.datasource.url}"/>
-        <property name="username" value="${spring.datasource.username}"/>
-        <property name="password" value="${spring.datasource.password}"/>
-    </bean>
-
     <bean class="com.iMatch.etl.datauploader.internal.MappingConfig" id="mappingConfig" init-method="init">
         <property name="typeMapping" value="classpath:uploadResource/UploadTypeMapping.xml" />
     </bean>
@@ -73,45 +63,6 @@
     <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexExcelParser" id="excelParser" scope="singleton" />
     <bean class="com.iMatch.etl.datauploader.internal.hexFileSense.HexTextParser" id="textParser" scope="singleton" />
 
-    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
-
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
-        <property name="jpaDialect" ref="jpaDialect"/>
-        <property name="dataSource" ref="hexgenDataSource" />
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
-                <property name="showSql" value="true" />
-                <property name="generateDdl" value="false"/>
-                <property name="database" value="${jpavendoradaptor}"/>
-            </bean>
-        </property>
-        <property name="sharedCacheMode" value="ENABLE_SELECTIVE"/>
-        <property name="persistenceUnitName" value="persistenceUnit" />
-        <property name="packagesToScan" value="com.iMatch"/>
-        <property name="jpaProperties">
-            <props>
-                <prop key="hibernate.max_fetch_depth">3</prop>
-                <!--<prop key="hibernate.jdbc.fetch_size">${jdbcFetchSize}</prop>-->
-                <prop key="hibernate.order_inserts">true</prop>
-                <prop key="hibernate.order_updates">true</prop>
-                <!--<prop key="hibernate.jdbc.batch_size">${jdbcBatchSize}</prop>-->
-                <prop key="hibernate.show_sql">false</prop>
-                <prop key="hibernate.hbm2ddl.auto">none</prop>
-                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.DefaultNamingStrategy</prop>
-                <prop key="hibernate.connection.charSet">UTF-8</prop>
-                <prop key="hibernate.default_schema">${spring.datasource.username}</prop>
-                <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.connection.autocommit">false</prop>
-                <prop key="org.hibernate.FlushMode">always</prop>
-                <!--<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</prop>-->
-                <!--<prop key="hibernate.cache.infinispan.cfg">infinispan.xml</prop>-->
-                <prop key="hibernate.cache.infinispan.statistics">true</prop>
-            </props>
-        </property>
-    </bean>
-
-
     <bean class="com.iMatch.EtlManager" id="etlManager">
         <property name="mappingConfig" ref="mappingConfig" />
         <property name="etlService" ref="etlService" />
@@ -121,4 +72,6 @@
 
     </bean>
 
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+    <bean id="fileManagementProcess" class="com.iMatch.controller.FileManagementProcess"/>
 </beans>

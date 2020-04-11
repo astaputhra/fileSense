@@ -5,7 +5,7 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%X{User}:%X{Company}:%X{JobId}:%X{XactionId}:%X{Event}:~:%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
+            <pattern>%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
         </encoder>
     </appender>
 
@@ -23,7 +23,7 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
-            <pattern>%X{User}:%X{Company}:%X{JobId}:%X{XactionId}:%X{Event}:~:%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
+            <pattern>%d{dd-MMM-yyyy HH:mm:ss.SSS}:~:%thread:~:%-5level:~:%-45C{0}:~:%-5L:~:%msg%n</pattern>
         </encoder>
     </appender>
 
