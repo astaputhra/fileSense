@@ -1,0 +1,32 @@
+.DS_Store
+
+.idea/
+out/
+
+*.class
+*.log
+**classes
+**bin
+**target
+**test-output
+**overlays
+
+# Eclipse project structure files
+**.project
+**.classpath
+**.settings
+**.springBeans
+
+
+#IntelliJ project structure files
+**intellij
+**intellij-win
+**workspace.xml
+**compiler.xml
+**encodings.xml
+**modules.xml
+
+# JTA Files #
+*.epoch
+tmlog*.log
+tmlog.lck
