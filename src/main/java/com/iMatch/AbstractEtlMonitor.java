@@ -55,7 +55,8 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
     @Value("#{appProp['etl.directory.tmpFolder']}")
     protected String tmpFolder;
 
-    private boolean isCompanyAndDivisionPartOfPath = false;
+//    @Value("#{appProp['etl.directory.monitor.isCompanyAndDivisionPartOfPath']}")
+//    private boolean isCompanyAndDivisionPartOfPath;
 
     private static final Logger logger = LoggerFactory.getLogger(AbstractEtlMonitor.class);
 
@@ -74,6 +75,8 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
     private Pattern blacklistPattern;
 
     public EtlDefinition getEtlDefinitionForFile(File file, String company, String division)  throws EtlMonitorException {
+        company = configuredCompany;
+        division = configuredDivision;
         EtlMonitorException e = new EtlMonitorException();
         EtlDefinition etlDefinition = null;
         e.getErrAttrs().put("unknownFile", file.getName());
@@ -299,7 +302,7 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
         String division = null;
         String fullRoot = root + fileSeparator;
         String fName = copiedPath.substring(fullRoot.length());
-        if (isCompanyAndDivisionPartOfPath) {
+        /*if (isCompanyAndDivisionPartOfPath) {
             String unixFilename = FilenameUtils.separatorsToUnix(fName);
             String[] split = unixFilename.split("/");
             if (split.length >= 3){
@@ -308,10 +311,10 @@ public abstract class AbstractEtlMonitor extends LastModifiedFileListFilter {
             }else if(split.length == 2){
                 company = split[0];
             }
-        } else {
+        } else {*/
             company = configuredCompany;
             division = configuredDivision;
-        }
+//        }
         return new String[]{company,division,fName};
     }
 }

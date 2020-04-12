@@ -28,6 +28,7 @@ import javax.persistence.Query;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,26 +78,28 @@ public class EtlManager {
             // FIXME restore this to - etlService.uploadData(jobMasterEntry);
             EtlJobStats etlJob = etlService.uploadData(jobMasterEntry.getUploadId(), jobMasterEntry.getFilename(), jobMasterEntry.getEtlFlowName(), jobMasterEntry.getUploadTempTable(), params);
 
-            updErrors = findErrorsForUpload(jobMasterEntry.getUploadId());
-            jobMasterEntry.setNumberOfErrors(updErrors);
+            jobMasterEntry.setNumberOfErrors(etlJob.getNumberOfErrors());
             jobMasterEntry.setNumberOfLinesInput(etlJob.getNumberOfLinesInput());
             jobMasterEntry.setNumberOfLinesOutput(etlJob.getNumberOfLinesOutput());
             jobMasterEntry.setNumberOfRejected(etlJob.getNumberOfRejected());
             jobMasterEntry.setUploadTempTable(jobMasterEntry.getUploadTempTable() == null
                     ? etlJob.getUploadTempTable()
                     : jobMasterEntry.getUploadTempTable());
-            if(updErrors.compareTo(BigDecimal.ZERO) == 0){
-                jobMasterEntry.setStatus(UploadStatus.BUSINESS_PROCESS_COMPLETED.toString());
+            if(jobMasterEntry.getNumberOfErrors().compareTo(BigDecimal.ZERO) == 0){
+                jobMasterEntry.setStatus(UploadStatus.PROCESS_COMPLETED.toString());
             }else {
                 jobMasterEntry.setStatus(UploadStatus.BUSINESS_VALIDATION_FAILED.toString());
-
+//                _em.createNativeQuery("delete from "+jobMasterEntry.getUploadTempTable()).executeUpdate();
+//                _em.flush();
             }
             iUploadJobMaster.save(jobMasterEntry);
             iUploadJobMaster.flush();
         } catch (Exception e) {
-            jobMasterEntry.setStatus(UploadStatus.BUSINESS_PROCESS_ABORTED.toString());
+            jobMasterEntry.setStatus(UploadStatus.PRE_ETL_ERROR.toString());
             iUploadJobMaster.save(jobMasterEntry);
             iUploadJobMaster.flush();
+            _em.createNativeQuery("delete from "+jobMasterEntry.getUploadTempTable()).executeUpdate();
+            _em.flush();
             populateImEventLog(jobMasterEntry);
             e.printStackTrace();
             logger.error("Error during kettle flow - {}", e.getMessage());
@@ -111,7 +114,7 @@ public class EtlManager {
 
     public void populateImEventLog(UploadJobMaster jobMasterEntry) {
         String query = "INSERT INTO IM_EVENT_LOG(EVENT_MESSAGE_ID,MESSAGE,ACTUAL_PROCESS_MESSAGE,SOURCE_ID,SOURCE_PAIR_ID,IS_ACTIVE,REC_VERSION," +
-                "REC_CREATED_BY,REC_CREATED_ON,UPD_IDENTIFIER) SELECT EM.ID,\""+jobMasterEntry.getStatus()+"\" ,\""+jobMasterEntry.getStatus()+"\",EM.SOURCE_ID," +
+                "REC_CREATED_BY,REC_CREATED_ON,UPD_IDENTIFIER) SELECT EM.ID,\""+jobMasterEntry.getStatus()+"\" ,\""+jobMasterEntry.getName()+"-"+jobMasterEntry.getStatus()+"\",EM.SOURCE_ID," +
                 "EM.SOURCE_PAIR_ID,'Y',1,'System',NOW(),\""+jobMasterEntry.getUploadId()+"\" FROM IM_EVENT_MESSAGE EM INNER      " +
                 "JOIN IM_EVENT E ON E.ID = EM.EVENT_ID AND E.EVENT_CODE = 'E0001' INNER " +
                 "JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = 'M0002';";
@@ -238,6 +241,7 @@ public class EtlManager {
         etlDefn.setIsCompanySpecific(etlAuth.getIsCompanySpecific());
         etlDefn.setPreProcessMethod(etlAuth.getPreProcessMethod());
         etlDefn.setPreProcessInput(etlAuth.getPreProcessInput());
+        etlDefn.setIsDuplicateAllowed(etlAuth.getIsDuplicateAllowed());
         etlDefn.setUserRole(etlAuth.getUserRole());
         return  etlDefn;
     }
@@ -316,12 +320,16 @@ public class EtlManager {
     }
 
 
-    private BigDecimal findErrorsForUpload(String uploadId) {
+    /*private BigDecimal findErrorsForUpload(String uploadId) {
+        BigInteger count =BigInteger.ZERO;
 
-        int imErrorLogCount = _em.createNativeQuery("SELECT ROW_COUNT FROM im_error_log WHERE upd_identifier = '"+uploadId+"'").getFirstResult();
-        int uploadErrorCount = _em.createNativeQuery("SELECT ROW_COUNT FROM upload_errors WHERE upd_identifier = '"+uploadId+"'").getFirstResult();
+        List imErrorLogCountList = _em.createNativeQuery("SELECT COUNT(*) FROM IM_EVENT_LOG WHERE UPD_IDENTIFIER = '" + uploadId + "'").getResultList();
+        List uploadErrorCountList = _em.createNativeQuery("SELECT COUNT(*) FROM UPLOAD_ERRORS WHERE UPD_IDENTIFIER = '"+uploadId+"'").getResultList();
 
-        return new BigDecimal(imErrorLogCount+uploadErrorCount);
-    }
+        if(CollectionUtils.isNotEmpty(imErrorLogCountList) && imErrorLogCountList.size() ==1) count = count.add((BigInteger)imErrorLogCountList.get(0));
+        if(CollectionUtils.isNotEmpty(uploadErrorCountList) && uploadErrorCountList.size() ==1) count = count.add((BigInteger) uploadErrorCountList.get(0));
+
+        return BigDecimal.valueOf(count.intValue());
+    }*/
 
 }

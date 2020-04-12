@@ -3,6 +3,7 @@ package com.iMatch.etl.orm;
 import com.iMatch.etl.EtlDefinition;
 import com.iMatch.etl.enums.Channel;
 import com.iMatch.etl.enums.UploadErrorType;
+import com.iMatch.etl.internal.UploadStatus;
 import org.springframework.beans.factory.annotation.Configurable;
 
 import javax.persistence.*;
@@ -30,7 +31,7 @@ public class UploadJobMaster extends AbstractCommonsEntity {
 
 	@Column(name = "USER_ID", length = 9)
     @NotNull
-	private String userId="VARA";
+	private String userId="VARA";//FIXME
 
     @Column(name = "UPLOAD_GENERIC_TYPE", length = 100)
 	private String uploadGenericType;
@@ -323,6 +324,7 @@ public class UploadJobMaster extends AbstractCommonsEntity {
 		jobMasterEntry.setChannel(Channel.FILESENSE);
 		jobMasterEntry.setExtEmailId(null);
 		jobMasterEntry.setZipFilename(null);
+		jobMasterEntry.setStatus(UploadStatus.FILE_RECEIVED.toString());
 //		jobMasterEntry.setCompany(company);
 //		jobMasterEntry.setDivision(division);
 //		jobMasterEntry.setOriginalFilename(name);

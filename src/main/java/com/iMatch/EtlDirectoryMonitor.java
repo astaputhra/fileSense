@@ -22,32 +22,26 @@ import java.util.stream.Collectors;
 
 public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 	public static final String TIME_FORMAT = "HH:mm:ss";
-	private String root;
-	private boolean isCompanyAndDivisionPartOfPath = false;
-	@Value("#{appProp['etl.directory.monitor.company']}")
-	private String configuredCompany;
-	@Value("#{appProp['etl.directory.monitor.division']}")
-	private String configuredDivision;
 
 	@Autowired
 	RestTemplate restTemplate;
 
-//	@Resource(name = "executorService")
-//	private ExecutorService executorService;
-
 	@Value("#{appProp['etl.directory.processed']}")
 	private String processedDir;
+
+	@Value("#{appProp['server.port']}")
+	private String serverPort;
+
 	private File processedDirFile;
 
 	@Resource(name = "etlService")
 	private ETLServiceProvider etlService;
+
 	private WatchServiceDirectoryScanner leafScanner;
+
 	@Value("#{appProp['etl.directory.scannerResetThreshold']}")
 	int scannerResetThreshold = 0;
 
-//	@Resource(name="operationChannel")
-//	private DirectChannel controlBusChannel;
-//
 	@PostConstruct
 	private void postInit(){
 		if (processedDir == null || processedDir.isEmpty()) return;
@@ -67,10 +61,6 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 
 	}
 
-	public void setCompanyAndDivisionPartOfPath(boolean companyAndDivisionPartOfPath) {
-		isCompanyAndDivisionPartOfPath = companyAndDivisionPartOfPath;
-	}
-
 	private static final Logger logger = LoggerFactory.getLogger(EtlDirectoryMonitor.class);
 
 	public String getRoot() {
@@ -85,6 +75,14 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 	}
 
 	public void handler(File recvdFile) {
+		if(recvdFile.getName().contains(".sql")){
+			try {
+				FileUtils.forceDelete(recvdFile);
+			} catch (IOException e) {
+				logger.error("Unable to delete the SQL File");
+			}
+			return;
+		}
 //		if(!isClusterMaster()){
 //			logger.info("File sensed but we have lost cluster mastership - not processing file {}",recvdFile.getName());
 //			return;
@@ -139,7 +137,7 @@ public class EtlDirectoryMonitor extends AbstractEtlMonitor {
 		logger.debug("Sending API Call to Validate the File {}",file.getName());
 		try {
 //			FileUtils.moveFileToDirectory(file,new File(tmpFolder),true);
-			String result = restTemplate.getForObject("http://localhost:8080/upload/filePath/" + file.getName(), String.class);
+			String result = restTemplate.getForObject("http://localhost:"+serverPort+"/upload/filePath/" + file.getName(), String.class);
 			return true;
 		} catch (Exception e) {
 			try {

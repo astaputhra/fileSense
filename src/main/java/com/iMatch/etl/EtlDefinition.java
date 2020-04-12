@@ -15,6 +15,7 @@ public class EtlDefinition {
 	private String dataEmailIdOut;
 	private boolean isCompanySpecific;
 	private boolean isDivisionSpecific;
+	private boolean isDuplicateAllowed;
 	private PreProcessMethod preProcessMethod;
 	private String preProcessInput;
 	private String userRole;
@@ -159,5 +160,13 @@ public class EtlDefinition {
 
 	public void setErrorType(UploadErrorType errorType) {
 		this.errorType = errorType;
+	}
+
+	public boolean getIsDuplicateAllowed() {
+		return isDuplicateAllowed;
+	}
+
+	public void setIsDuplicateAllowed(boolean duplicateAllowed) {
+		isDuplicateAllowed = duplicateAllowed;
 	}
 }

@@ -33,7 +33,7 @@
 
     <bean id="handler" class="com.iMatch.EtlDirectoryMonitor">
         <property name="root" value="${etl.directory.monitor.directory}"/>
-        <property name="companyAndDivisionPartOfPath" value="${etl.directory.monitor.isCompanyAndDivisionPartOfPath}"/>
+        <!--<property name="companyAndDivisionPartOfPath" value="${etl.directory.monitor.isCompanyAndDivisionPartOfPath}"/>-->
         <property name="leafScanner" ref="leafScanner"/>
     </bean>
 

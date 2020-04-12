@@ -86,9 +86,10 @@ public class AppConfig {
         properties.put("hibernate.default_schema",databaseProperties().getUsername());
         properties.put("hibernate.format_sql",true);
         properties.put("hibernate.connection.autocommit",false);
+        properties.put("hibernate.cache.use_second_level_cache",false);
+        properties.put("hibernate.cache.use_query_cache",false);
+        properties.put("hibernate.cache.region.factory_class","org.hibernate.cache.infinispan.InfinispanRegionFactory");
         properties.put("org.hibernate.FlushMode","always");
-//        properties.put("hibernate.cache.region.factory_class","org.hibernate.cache.infinispan.InfinispanRegionFactory");
-//        properties.put("hibernate.cache.infinispan.statistics",true);
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.MYSQL);

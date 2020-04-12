@@ -34,6 +34,11 @@
             <default_value>CIMB_BANK_UT_REPORT_MASKED_XLSX_FLOW</default_value>
             <description/>
         </parameter>
+        <parameter>
+            <name>POST_KETTLE</name>
+            <default_value>MoveDataSTGtoUPD&#x7c;&#x7c;UPD_IDENTIFIER</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -128,8 +133,6 @@
   <hop> <from>Select values 2</from><to>Add UPD ID 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Data Validator</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Add UPD ID 2</from><to>Data Validator</to><enabled>Y</enabled> </hop>
-  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>
-  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
   <hop> <from>Output_Node</from><to>Handle Err DB</to><enabled>Y</enabled> </hop>
   <hop> <from>Data Validator</from><to>Output_Node</to><enabled>Y</enabled> </hop>
   <hop> <from>Convert</from><to>Select values 2</to><enabled>Y</enabled> </hop>
@@ -219,30 +222,6 @@
     </step>
 
   <step>
-    <name>Blocking Step</name>
-    <type>BlockingStep</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <pass_all_rows>N</pass_all_rows>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>block</prefix>
-      <cache_size>5000</cache_size>
-      <compress>Y</compress>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>925</xloc>
-      <yloc>363</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Blocking Step 2</name>
     <type>BlockingStep</type>
     <description/>
@@ -310,39 +289,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>818</xloc>
       <yloc>216</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Call DB Procedure</name>
-    <type>DBProc</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>HexGenJNDI</connection>
-    <procedure>MoveDataSTGtoUPD</procedure>
-    <lookup>
-      <arg>
-        <name>Upd_identifier</name>
-        <direction>IN</direction>
-        <type>String</type>
-      </arg>
-    </lookup>
-    <result>
-      <name/>
-      <type>Number</type>
-    </result>
-    <auto_commit>Y</auto_commit>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1037</xloc>
-      <yloc>364</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2112,6 +2058,36 @@
     </step>
 
   <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var EVENT_MESSAGE_ID &#x3d; 0&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>EVENT_MESSAGE_ID</name>
+        <rename>EVENT_MESSAGE_ID</rename>
+        <type>Integer</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>119</xloc>
+      <yloc>366</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Output_Node</name>
     <type>TableOutput</type>
     <description/>
@@ -2125,7 +2101,7 @@
     <connection>HexGenJNDI</connection>
     <schema/>
     <table>im_stg_emanager</table>
-    <commit>1000</commit>
+    <commit>1</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
@@ -2367,7 +2343,7 @@
     <connection>HexGenJNDI</connection>
     <schema/>
     <table>im_event_log</table>
-    <commit>1000</commit>
+    <commit>1</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
@@ -2425,7 +2401,7 @@
     <connection>HexGenJNDI</connection>
     <schema/>
     <table>im_event_log</table>
-    <commit>1000</commit>
+    <commit>1</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
@@ -2483,7 +2459,7 @@
     <connection>HexGenJNDI</connection>
     <schema/>
     <table>im_event_log</table>
-    <commit>1000</commit>
+    <commit>1</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>N</use_batch>
@@ -4368,36 +4344,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>511</xloc>
       <yloc>372</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xd;&#xa;&#xd;&#xa;var EVENT_MESSAGE_ID &#x3d; 0&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>EVENT_MESSAGE_ID</name>
-        <rename>EVENT_MESSAGE_ID</rename>
-        <type>Integer</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>119</xloc>
-      <yloc>366</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

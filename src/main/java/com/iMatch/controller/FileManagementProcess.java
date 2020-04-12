@@ -68,25 +68,16 @@ public class FileManagementProcess extends AbstractEtlMonitor {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            List<UploadJobMaster> byChecksum = iUploadJobMaster.findByChecksum(uploadJobMaster.getChecksum());
 
             uploadJobMaster = uploadJobMaster.populateUploadJobMaster(etlDefn,file.getName(),configuredCompany,configuredDivision,checksumSHA1);
             uploadJobMaster.setFilename(tmpFile.getPath());
+
             iUploadJobMaster.save(uploadJobMaster);
             iUploadJobMaster.flush();
 
             logger.trace("Generating upload id for upload job master entry");
             int id = uploadJobMaster.getId().intValue();
             uploadJobMaster.setUploadId(etlDefn.getEtlFlow() + id + DateTimeFormat.forPattern("ddMMyyyy").print(new LocalDate()));
-
-                if(CollectionUtils.isNotEmpty(byChecksum)){
-                    uploadJobMaster.setStatus(UploadStatus.DUPLICATE_FILE.toString());
-                    iUploadJobMaster.save(uploadJobMaster);
-                    iUploadJobMaster.flush();
-                    etlManager.populateImEventLog(uploadJobMaster);
-                    logger.debug("Since The File Is Duplicate returning the call");
-                    return true;
-                }
 
             iUploadJobMaster.save(uploadJobMaster);
             iUploadJobMaster.flush();

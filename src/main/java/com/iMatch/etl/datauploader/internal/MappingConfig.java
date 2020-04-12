@@ -86,7 +86,7 @@ public class MappingConfig  implements Runnable {
                 }
             }
 
-            mappingDefinitions.put(definition.getType(), definition);
+//            mappingDefinitions.put(definition.getType(), definition);
         }
     }
 

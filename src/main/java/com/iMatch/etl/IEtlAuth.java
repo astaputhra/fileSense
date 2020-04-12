@@ -20,6 +20,7 @@ public interface IEtlAuth {
     public String getDataEmailIdIn();
     public String getDataEmailIdOut();
     public boolean getIsDivisionSpecific();
+    public boolean getIsDuplicateAllowed();
     public boolean getIsCompanySpecific();
     PreProcessMethod getPreProcessMethod();
     String getPreProcessInput();

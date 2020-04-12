@@ -6,6 +6,7 @@ import com.iMatch.etl.datauploader.internal.MappingConfig;
 import com.iMatch.etl.datauploader.EtlJobStats;
 import com.iMatch.etl.datauploader.internal.SupportedUploadFileTypes;
 import org.apache.commons.io.FilenameUtils;
+import org.infinispan.commons.hash.Hash;
 import org.pentaho.di.core.KettleEnvironment;
 import org.pentaho.di.core.database.*;
 import org.pentaho.di.core.exception.KettleException;
@@ -28,6 +29,7 @@ import org.pentaho.di.trans.step.StepErrorMeta;
 import org.pentaho.di.trans.step.StepMeta;
 import org.pentaho.di.trans.step.StepMetaDataCombi;
 import org.pentaho.di.trans.steps.databaselookup.DatabaseLookupMeta;
+import org.pentaho.di.trans.steps.dbproc.DBProcMeta;
 import org.pentaho.di.trans.steps.excelinput.ExcelInputField;
 import org.pentaho.di.trans.steps.excelinput.ExcelInputMeta;
 import org.pentaho.di.trans.steps.selectvalues.SelectValuesMeta;
@@ -38,9 +40,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.thymeleaf.util.StringUtils;
 
 import javax.persistence.EntityManager;
+import javax.persistence.ParameterMode;
 import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
@@ -56,22 +61,24 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
     private HexFileSense hexFileSense;
 
     private String jpavendoradaptor;
-    @Value("#{appProp[repoDbVendor]}")
-    private String repoDbVendor;
-    @Value("#{appProp[repoHostname]}")
-    private String repoHostname;
-    @Value("#{appProp[repoDbName]}")
-    private String repoDbName;
-    @Value("#{appProp[repoDbPort]}")
-    private String repoDbPort;
-    @Value("#{appProp[repoDbUsername]}")
-    private String repoDbUsername;
-    @Value("#{appProp[repoDbPassword]}")
-    private String repoDbPassword;
-    @Value("#{appProp[repoUsername]}")
-    private String repoUsername;
-    @Value("#{appProp[repoPassword]}")
-    private String repoPassword;
+
+//    @Value("#{appProp[repoDbVendor]}")
+//    private String repoDbVendor;
+//    @Value("#{appProp[repoHostname]}")
+//    private String repoHostname;
+//    @Value("#{appProp[repoDbName]}")
+//    private String repoDbName;
+//    @Value("#{appProp[repoDbPort]}")
+//    private String repoDbPort;
+//    @Value("#{appProp[repoDbUsername]}")
+//    private String repoDbUsername;
+//    @Value("#{appProp[repoDbPassword]}")
+//    private String repoDbPassword;
+//    @Value("#{appProp[repoUsername]}")
+//    private String repoUsername;
+//    @Value("#{appProp[repoPassword]}")
+//    private String repoPassword;
+
     @Value("#{appProp[repositoryType]}")
     private String repositoryType;
     @Value("classpath:#{appProp[repoFSName]}")
@@ -163,7 +170,7 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
         }
     }
 
-    private void initDatabaseRepository() throws KettleException {
+    /*private void initDatabaseRepository() throws KettleException {
         if (databaseRepository == null) {
             databaseRepository = new KettleDatabaseRepository();
             DatabaseMeta databaseMeta = new DatabaseMeta("kt", repoDbVendor, "", repoHostname, repoDbName, repoDbPort, repoDbUsername, repoDbPassword);
@@ -171,27 +178,18 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
             databaseRepository.init(kettleDatabaseMeta);
             databaseRepository.connect(repoUsername, repoPassword);
         }
-    }
+    }*/
 
     private TransMeta getTransformationMeta(String transformationName) throws Exception {
-/*
-        TransMeta transMeta = transMetaCache.get(transformationName);
-        if(transMeta != null) return transMeta;
-
-        synchronized (this) {
-
-            transMeta = transMetaCache.get(transformationName);
-            if(transMeta != null) return transMeta;
-*/
 
             RepositoryDirectoryInterface repoDirectory;
             String flowDirectory = FilenameUtils.getFullPath(transformationName);
             String flowFile = FilenameUtils.getBaseName(transformationName);
             if (flowDirectory == null || flowDirectory.trim().length() == 0) flowDirectory = "/";
-            if (repositoryType.equals("DB")) {
-                repoDirectory = databaseRepository.findDirectory(flowDirectory);
-                return databaseRepository.loadTransformation(flowFile, repoDirectory, null, true, null);
-            }
+//            if (repositoryType.equals("DB")) {
+//                repoDirectory = databaseRepository.findDirectory(flowDirectory);
+//                return databaseRepository.loadTransformation(flowFile, repoDirectory, null, true, null);
+//            }
             repoDirectory = kettleFileRepository.findDirectory(flowDirectory);
             TransMeta transMeta = kettleFileRepository.loadTransformation(flowFile, repoDirectory, null, true, null);
 //            transMetaCache.put(transformationName, transMeta);
@@ -202,6 +200,7 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
     public void init(){
         int maxConcurrentKTRFlows = 10;
         etlProcessingPermits = new Semaphore(maxConcurrentKTRFlows,true);
+        run();
     }
     @Override
     public void run() {
@@ -213,11 +212,11 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
             KettleEnvironment.init(false);
             errorlistener = new HexKettleLoggingPlugin();
             KettleLogStore.getAppender().addLoggingEventListener(errorlistener);
-            if (repositoryType.equals("FS")) {
-                initFileRepository();
-            } else {
-                initDatabaseRepository();
-            }
+            initFileRepository();
+//            if (repositoryType.equals("FS")) {
+//            } else {
+//                initDatabaseRepository();
+//            }
             parseRepo();
             TransMeta jsErrorTransMeta = getTransformationMeta("GenericJSErrorHandler");
             for (StepMeta stepMeta : jsErrorTransMeta.getSteps()) {
@@ -577,6 +576,11 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
                     if (!(Integer.parseInt(tableOutputMeta.getCommitSize()) > 1)) tableOutputMeta.setCommitSize(1);
                     tableOutputMeta.setUseBatchUpdate(false);
                 }
+
+                if(stepMeta.getTypeId().equalsIgnoreCase("DBProc")) {
+                    DBProcMeta tableOutputMeta = (DBProcMeta) stepMeta.getStepMetaInterface();
+                    tableOutputMeta.getDatabase().setDatabaseInterface(databaseInterface);
+                }
                 if(stepMeta.getTypeId().equalsIgnoreCase("DBLookup")) {
                     DatabaseLookupMeta tableOutputMeta = (DatabaseLookupMeta) stepMeta.getStepMetaInterface();
                     if(tableOutputMeta.getDatabaseMeta() != null) {
@@ -612,7 +616,7 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
                     }
                 }
             } catch (DuplicateParamException e) {
-                logger.info("Transformation '{}' already has HexUploadID as a parameter - probably harmless but it shouldn't have this parameter defined!!", etlFlowName);
+                logger.error("Transformation '{}' already has HexUploadID as a parameter - probably harmless but it shouldn't have this parameter defined!!", etlFlowName);
             }
             trans.setParameterValue("HexUploadID", uploadID);
             trans.setLogLevel(LogLevel.DEBUG);
@@ -637,13 +641,25 @@ public class KettleGlue implements ETLServiceProvider, Runnable {
                 } else if (s.stepname.contains("Output_Node")) {
                     jobStats.setNumberOfLinesOutput(jobStats.getNumberOfLinesOutput().add(new BigDecimal(s.step.getLinesWritten())));
 
-                } else if (s.stepname.contains("Error_Node") || s.stepname.contains("Persist Errors")) {
+                } else if (s.stepname.contains("Error_Node") || s.stepname.contains("Persist Errors") || StringUtils.contains(StringUtils.replace(s.stepname," ",""),"PersistDBError") ) {
                     jobStats.setNumberOfErrors( jobStats.getNumberOfErrors().add(new BigDecimal(s.step.getLinesWritten())));
 
                 } else if (s.stepname.contains("Sink_Node")) {
                     jobStats.setNumberOfRejected(jobStats.getNumberOfRejected().add(new BigDecimal(s.step.getLinesWritten())));
                 }
             }
+
+            String post_kettle = trans.getParameterDefault("POST_KETTLE");
+            if(post_kettle != null && StringUtils.split(post_kettle, "||").length == 1){
+                String[] split = StringUtils.split(post_kettle, "||");
+                String procedure = split[0];
+                String param = split[1];
+                StoredProcedureQuery storedProcedure = _em.createStoredProcedureQuery(procedure);
+                storedProcedure.registerStoredProcedureParameter(param, String.class, ParameterMode.IN);
+                storedProcedure.setParameter(param, uploadID);
+                storedProcedure.execute();
+            }
+
 
         } catch (Exception e) {
             logger.error("error during etl {}",e.getMessage());

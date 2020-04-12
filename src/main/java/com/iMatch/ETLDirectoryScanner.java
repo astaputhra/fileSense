@@ -5,6 +5,7 @@ import com.iMatch.etl.EtlDefinition;
 import com.iMatch.etl.helperClasses.FileUtilities;
 import com.iMatch.etl.internal.UploadStatus;
 import com.iMatch.etl.orm.UploadJobMaster;
+import com.ibatis.common.jdbc.ScriptRunner;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import javax.sql.DataSource;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -27,13 +29,15 @@ import java.util.stream.Stream;
 /**
  * Created by Astaputhra on 17-03-2020.
  */
-@Transactional
 public class ETLDirectoryScanner extends AbstractEtlMonitor {
 
 //    AbstractEtlMonitor directoryMonitor;
 
     @Autowired
     EtlDirectoryMonitor handler;
+
+    @Autowired
+    DataSource jndiDataSource;
 
     @Value("#{appProp['etl.directory.monitor.directory']}")
     String root;
@@ -166,11 +170,22 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
     private boolean validateTheFile(File file) {
         File tmpFile = null;
         try {
+            if(file.getName().contains(".sql")){
+                ScriptRunner sr = new ScriptRunner(jndiDataSource.getConnection(), false, false);
+                Reader reader = new BufferedReader(new FileReader(file.getPath()));
+                sr.runScript(reader);
+                reader.close();
+                return false;
+            }
             tmpFile = getTempFile(file);
             String[] companyAndDivision = getCompanyAndDivisionAndFileName(file.getAbsolutePath());
             EtlDefinition etlDefn = getEtlDefinitionForFile(tmpFile, companyAndDivision[0], companyAndDivision[1]);
             String checksumSHA1 = FileUtilities.checksumSHA1(file);
-            List<UploadJobMaster> byChecksum = iUploadJobMaster.findByChecksum(checksumSHA1);
+            List<UploadJobMaster> byChecksum = new ArrayList<>();
+
+            if(!etlDefn.getIsDuplicateAllowed()){
+                iUploadJobMaster.findByChecksum(checksumSHA1);
+            }
 
             if(CollectionUtils.isNotEmpty(byChecksum) || etlDefn == null){
                 String status = (etlDefn == null ? UploadStatus.NO_DEF_FOUND : UploadStatus.DUPLICATE_FILE).toString();
@@ -194,7 +209,7 @@ public class ETLDirectoryScanner extends AbstractEtlMonitor {
 
                 handler.moveOrDeleteOriginalFile(file);
                 logger.debug("Since The File Is Duplicate returning the call");
-                return true;
+                return false;
             }
             return false;
         } catch (Exception e) {

@@ -16,7 +16,7 @@
         </parameter>
         <parameter>
             <name>HexInputFileName</name>
-            <default_value>D:\Local Disk(E)\iMatch_CIMB_Bank\Document\Annexure 24-01-2020\Annexure 4\OTH002- DAT file (PayNet).dat</default_value>
+            <default_value>D:\Local Disk(E)\iMatch_CIMB_Bank\script\pBCBB0235reconrept20200106.dat</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -119,7 +119,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 2</from><to>Blocking Step 2 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3</from><to>Blocking Step 2 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 3</from><to>Persist  DB Error 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Handle Err DB 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Add UPD ID</to><enabled>Y</enabled> </hop>  <hop> <from>Add UPD ID</from><to>Output_Node</to><enabled>Y</enabled> </hop>  <hop> <from>Database join 2</from><to>Select values 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Input_Node</from><to>Database join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Handle Err DB 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3 2</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Data Segration</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration</from><to>Select values 3</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values 3 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3 2 2</from><to>Data Segration 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 2</from><to>Persist  DB Error 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 3</from><to>Blocking Step 2 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration 2</from><to>Handle Err DB 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>  <hop> <from>Merge Join</from><to>Select values 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3 3</from><to>Data Validator</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2</from><to>Blocking Step 2 3 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 3 2</from><to>Persist  DB Error 3 2</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Output_Node</from><to>Blocking Step</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step</from><to>Call DB Procedure</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 2</from><to>Blocking Step 2 3 3</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3</from><to>Blocking Step 2 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3</from><to>Persist  DB Error 3</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 3</from><to>Persist  DB Error 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration</from><to>Handle Err DB 3</to><enabled>Y</enabled> </hop>  <hop> <from>Output_Node</from><to>Handle Err DB 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Add UPD ID</to><enabled>Y</enabled> </hop>  <hop> <from>Add UPD ID</from><to>Output_Node</to><enabled>Y</enabled> </hop>  <hop> <from>Database join 2</from><to>Select values 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Input_Node</from><to>Database join 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator</from><to>Handle Err DB 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2</from><to>Blocking Step 2 3 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Blocking Step 2 3 3 2</from><to>Persist  DB Error 3 2</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3 2</from><to>Data Segration</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 2 3</from><to>Data Validator 2</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2 2</from><to>Persist  DB Error 3 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values 2 3</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values 3</to><enabled>Y</enabled> </hop>  <hop> <from>Data Validator 2</from><to>Handle Err DB 3 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Data Segration</from><to>Handle Err DB 3 2 2 2</to><enabled>Y</enabled> </hop>  <hop> <from>Handle Err DB 3 2 2 2</from><to>Filter rows</to><enabled>Y</enabled> </hop>  <hop> <from>Select values 3</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>Data Validator</to><enabled>Y</enabled> </hop>  <hop> <from>Filter rows 2</from><to>Dummy (do nothing)</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Add UPD ID</name>
     <type>ScriptValueMod</type>
@@ -200,7 +200,7 @@ var REC_CREATED_BY = &quot;System&quot;;
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>929</xloc>
+      <xloc>1028</xloc>
       <yloc>244</yloc>
       <draw>Y</draw>
       </GUI>
@@ -223,8 +223,8 @@ var REC_CREATED_BY = &quot;System&quot;;
       <compress>Y</compress>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1125</xloc>
-      <yloc>242</yloc>
+      <xloc>1230</xloc>
+      <yloc>247</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -253,29 +253,6 @@ var REC_CREATED_BY = &quot;System&quot;;
     </step>
 
   <step>
-    <name>Blocking Step 2 3 2</name>
-    <type>BlockingStep</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>block</prefix>
-      <cache_size>5000</cache_size>
-      <compress>Y</compress>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>397</xloc>
-      <yloc>404</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Blocking Step 2 3 3</name>
     <type>BlockingStep</type>
     <description/>
@@ -292,8 +269,31 @@ var REC_CREATED_BY = &quot;System&quot;;
       <compress>Y</compress>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1017</xloc>
-      <yloc>91</yloc>
+      <xloc>1122</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step 2 3 3 2</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>N</pass_all_rows>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>925</xloc>
+      <yloc>86</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -324,8 +324,8 @@ var REC_CREATED_BY = &quot;System&quot;;
     <auto_commit>Y</auto_commit>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1221</xloc>
-      <yloc>242</yloc>
+      <xloc>1326</xloc>
+      <yloc>247</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -334,7 +334,7 @@ var REC_CREATED_BY = &quot;System&quot;;
     <name>Data Segration</name>
     <type>ScriptValueMod</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -447,7 +447,31 @@ if(FPX_CR_TRX_ID == null || FPX_CR_TRX_ID == &quot;&quot;){
 FPX_TX_ID = FPX_DR_TRX_ID;
 }else if(FPX_DR_TRX_ID == null || FPX_DR_TRX_ID == &quot;&quot;){
 FPX_TX_ID = FPX_CR_TRX_ID;
-}</jsScript_script>
+}
+
+var row,updrowcount;
+if(Indicator == &quot;T&quot;){
+row = str2num(count);
+number= str2num(UPD_RECORD_NUMBER);
+if(row == number){
+		setVariable(&quot;updrowcount&quot;,&quot;ROWCOUNTMATCH&quot;, &quot;r&quot;);
+		&#47;&#47;var sum = &quot;M&quot;;
+		&#47;&#47;var sum_M = setVariable(&quot;MATCH&quot;,&quot;Y&quot;, &quot;r&quot;);
+		}
+if(row != number){			
+		setVariable(&quot;updrowcount&quot;,&quot;ROWCOUNTMIS&quot;, &quot;r&quot;);
+		&#47;&#47;getVariable(&quot;updrowcount&quot;,&quot;failed&quot;);
+		&#47;&#47;var sum = &quot;NM&quot;;	
+		&#47;&#47;var sum_M = setVariable(&quot;MATCH&quot;,&quot;N&quot;, &quot;r&quot;);
+	}		
+		
+}else{
+row = null;
+number = null;
+rw = null;
+countcheck = null;
+}
+</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_IDENTIFIER</name>
         <rename>UPD_IDENTIFIER</rename>
         <type>String</type>
@@ -536,45 +560,6 @@ FPX_TX_ID = FPX_CR_TRX_ID;
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>496</xloc>
       <yloc>243</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Data Segration 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var TotAmt;
-
-TotAmt = str2num(Process_Type + FPXCR_Transaction_Id);</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>TotAmt</name>
-        <rename>TotAmt</rename>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>UPD_IDENTIFIER</name>
-        <rename>UPD_IDENTIFIER</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>655</xloc>
-      <yloc>328</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -670,36 +655,10 @@ TotAmt = str2num(Process_Type + FPXCR_Transaction_Id);</jsScript_script>
 <sourcing_step/>
 <sourcing_field/>
 <allowed_value></allowed_value></validator_field>
-       <validator_field><name>DAT_AMOUNT_3</name>
-<validation_name>DAT_AMOUNT_3</validation_name>
-<max_length/>
-<min_length/>
-<null_allowed>Y</null_allowed>
-<only_null_allowed>N</only_null_allowed>
-<only_numeric_allowed>N</only_numeric_allowed>
-<data_type>Number</data_type>
-<data_type_verified>Y</data_type_verified>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<max_value/>
-<min_value/>
-<start_string/>
-<end_string/>
-<start_string_not_allowed/>
-<end_string_not_allowed/>
-<regular_expression/>
-<regular_expression_not_allowed/>
-<error_code/>
-<error_description>Invalid number</error_description>
-<is_sourcing_values>N</is_sourcing_values>
-<sourcing_step/>
-<sourcing_field/>
-<allowed_value></allowed_value></validator_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>819</xloc>
-      <yloc>238</yloc>
+      <xloc>924</xloc>
+      <yloc>243</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -727,36 +686,8 @@ INNER JOIN IM_MESSAGE M ON M.ID = EM.MESSAGE_ID AND M.MESSAGE_CODE = &apos;M0002
     </parameter>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>120</xloc>
+      <xloc>274</xloc>
       <yloc>243</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Data Segration</send_true_to>
-<send_false_to>Select values 3 2 2</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>Indicator</leftvalue>
- <function>&lt;&gt;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>T</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>302</xloc>
-      <yloc>245</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -805,8 +736,8 @@ var UPD_ERROR_MESSAGE = UPD_ERROR_MESSAGE.replace(re2, &apos;&apos;);
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1022</xloc>
-      <yloc>158</yloc>
+      <xloc>1127</xloc>
+      <yloc>163</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -907,67 +838,8 @@ var UPD_ERROR_MESSAGE=Error;
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>817</xloc>
-      <yloc>136</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Handle Err DB 3 3</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#47;&#47;Script here
-
-var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
-
-var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
-
-var fname=getShortFilename(sourcefile);
-
-var Error =&apos;Error   File Name: &apos; +fname +&apos;, Row: &apos;+ UPD_RECORD_NUMBER + &apos;, Message: &apos;   + UPD_ERROR_MESSAGE ;
-
-var UPD_ERROR_MESSAGE=Error;
-var REC_CREATED_ON = new Date();
-var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_IDENTIFIER</name>
-        <rename>UPD_IDENTIFIER</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>UPD_ERROR_MESSAGE</name>
-        <rename>UPD_ERROR_MESSAGE</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>      <field>        <name>REC_CREATED_ON</name>
-        <rename>REC_CREATED_ON</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>REC_CREATED_BY</name>
-        <rename>REC_CREATED_BY</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>501</xloc>
-      <yloc>402</yloc>
+      <xloc>922</xloc>
+      <yloc>141</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1395,6 +1267,21 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <trim_type>both</trim_type>
         <repeat>N</repeat>
       </field>
+      <field>
+        <name>count</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>1</position>
+        <length>7</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
     </fields>
     <limit>0</limit>
     <error_ignored>N</error_ignored>
@@ -1423,35 +1310,8 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>33</xloc>
-      <yloc>243</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Select values 3</step1>
-<step2>Data Segration 2</step2>
-    <keys_1>
-      <key>UPD_IDENTIFIER</key>
-    </keys_1>
-    <keys_2>
-      <key>UPD_IDENTIFIER</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>653</xloc>
-      <yloc>240</yloc>
+      <xloc>172</xloc>
+      <yloc>239</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1469,7 +1329,7 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
     <connection>HexGenJNDI</connection>
     <schema/>
     <table>im_stg_dat</table>
-    <commit>1</commit>
+    <commit>50000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
@@ -1549,6 +1409,10 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
           <stream_name>UPD_RECORD_NUMBER</stream_name>
         </field>
         <field>
+          <column_name>EVENT_MESSAGE_ID</column_name>
+          <stream_name>EVENT_MESSAGE_ID</stream_name>
+        </field>
+        <field>
           <column_name>UPD_IDENTIFIER</column_name>
           <stream_name>UPD_IDENTIFIER</stream_name>
         </field>
@@ -1593,8 +1457,24 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
           <stream_name>SETTLEMENT_AMOUNT</stream_name>
         </field>
         <field>
+          <column_name>PROCESS_TYPE_ORIGIN</column_name>
+          <stream_name>PROCESS_TYPE_ORIGIN</stream_name>
+        </field>
+        <field>
+          <column_name>MESSEGA_TOKEN_TYPE</column_name>
+          <stream_name>MESSEGA_TOKEN_TYPE</stream_name>
+        </field>
+        <field>
+          <column_name>FPX_TRX_ID</column_name>
+          <stream_name>FPX_TX_ID</stream_name>
+        </field>
+        <field>
           <column_name>UPLOAD_DATE</column_name>
           <stream_name>UPLOAD_DATE</stream_name>
+        </field>
+        <field>
+          <column_name>UPD_ERROR_MESSAGE</column_name>
+          <stream_name>UPD_ERROR_MESSAGE</stream_name>
         </field>
         <field>
           <column_name>UPD_STATUS</column_name>
@@ -1616,27 +1496,11 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
           <column_name>FILENAME</column_name>
           <stream_name>FILENAME</stream_name>
         </field>
-        <field>
-          <column_name>PROCESS_TYPE_ORIGIN</column_name>
-          <stream_name>PROCESS_TYPE_ORIGIN</stream_name>
-        </field>
-        <field>
-          <column_name>MESSEGA_TOKEN_TYPE</column_name>
-          <stream_name>MESSEGA_TOKEN_TYPE</stream_name>
-        </field>
-        <field>
-          <column_name>FPX_TRX_ID</column_name>
-          <stream_name>FPX_TX_ID</stream_name>
-        </field>
-        <field>
-          <column_name>DAT_AMOUNT_3</column_name>
-          <stream_name>DAT_AMOUNT_3</stream_name>
-        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1025</xloc>
-      <yloc>242</yloc>
+      <xloc>1130</xloc>
+      <yloc>247</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1696,8 +1560,8 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1015</xloc>
-      <yloc>17</yloc>
+      <xloc>1120</xloc>
+      <yloc>22</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1802,65 +1666,8 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>821</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Persist  DB Error 3 3</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>HexGenJNDI</connection>
-    <schema/>
-    <table>im_event_log</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>UPD_IDENTIFIER</column_name>
-          <stream_name>UPD_IDENTIFIER</stream_name>
-        </field>
-        <field>
-          <column_name>MESSAGE</column_name>
-          <stream_name>UPD_ERROR_MESSAGE</stream_name>
-        </field>
-        <field>
-          <column_name>EVENT_MESSAGE_ID</column_name>
-          <stream_name>EVENT_MESSAGE_ID</stream_name>
-        </field>
-        <field>
-          <column_name>REC_CREATED_ON</column_name>
-          <stream_name>REC_CREATED_ON</stream_name>
-        </field>
-        <field>
-          <column_name>REC_CREATED_BY</column_name>
-          <stream_name>REC_CREATED_BY</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>302</xloc>
-      <yloc>404</yloc>
+      <xloc>926</xloc>
+      <yloc>21</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1975,6 +1782,10 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>count</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>UPD_RECORD_NUMBER</name>
         <rename/>
         <length>-2</length>
@@ -2039,6 +1850,10 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
+      </field>      <field>        <name>UPD_COUNT</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
       <remove>        <name>Indicator</name>
       </remove>      <remove>        <name>Process_Type</name>
@@ -2050,6 +1865,8 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
       </remove>      <remove>        <name>Settlement_Amt</name>
       </remove>      <remove>        <name>Settlement_Date</name>
       </remove>      <remove>        <name>TRX_DateTime</name>
+      </remove>      <remove>        <name>count</name>
+      </remove>      <remove>        <name>UPD_COUNT</name>
       </remove>      <meta>        <name>FPXCR_Trx_Sno</name>
         <rename>FPX_CR_TRX_SL_NO</rename>
         <type>-</type>
@@ -2424,8 +2241,8 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>572</xloc>
-      <yloc>241</yloc>
+      <xloc>779</xloc>
+      <yloc>243</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2540,454 +2357,7 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>UPD_RECORD_NUMBER</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>EVENT_MESSAGE_ID</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>Indicator</name>
-        <rename>Indicator</rename>
-        <type>-</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Process_Type</name>
-        <rename>Process_Type</rename>
-        <type>-</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPXCR_Transaction_Id</name>
-        <rename>FPXCR_Transaction_Id</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPXCR_Trx_Sno</name>
-        <rename>FPXCR_Trx_Sno</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPXDR_Transaction_Id</name>
-        <rename>FPXDR_Transaction_Id</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPXDR_Trx_Sno</name>
-        <rename>FPXDR_Trx_Sno</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Message_Type</name>
-        <rename>Message_Type</rename>
-        <type>-</type>
-        <length>2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Message_Token</name>
-        <rename>Message_Token</rename>
-        <type>-</type>
-        <length>2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TRX_DateTime</name>
-        <rename>TRX_DateTime</rename>
-        <type>-</type>
-        <length>14</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Seller_Order_No</name>
-        <rename>Seller_Order_No</rename>
-        <type>-</type>
-        <length>40</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Bank_Acc_No</name>
-        <rename>Bank_Acc_No</rename>
-        <type>-</type>
-        <length>20</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Bank_Id</name>
-        <rename>Bank_Id</rename>
-        <type>-</type>
-        <length>15</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Currency</name>
-        <rename>Currency</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Trx_Amt</name>
-        <rename>Trx_Amt</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Settlement_Cur</name>
-        <rename>Settlement_Cur</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Settlement_Amt</name>
-        <rename>Settlement_Amt</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Auth_Code</name>
-        <rename>Auth_Code</rename>
-        <type>-</type>
-        <length>2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Auth_No</name>
-        <rename>Auth_No</rename>
-        <type>-</type>
-        <length>20</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Trx_Status</name>
-        <rename>Trx_Status</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Settlement_Date</name>
-        <rename>Settlement_Date</rename>
-        <type>-</type>
-        <length>14</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Fee_Indicator</name>
-        <rename>Fee_Indicator</rename>
-        <type>-</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Charge_Fee_Amt</name>
-        <rename>Charge_Fee_Amt</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Buyer_Distribution_Fee</name>
-        <rename>Buyer_Distribution_Fee</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Exchange_Bank_Fee</name>
-        <rename>Exchange_Bank_Fee</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Seller_Distribution_Fee</name>
-        <rename>Seller_Distribution_Fee</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
-        <rename>UPD_RECORD_NUMBER</rename>
-        <type>-</type>
-        <length>10</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
-        <rename>EVENT_MESSAGE_ID</rename>
-        <type>-</type>
-        <length>9</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>208</xloc>
-      <yloc>245</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 3 2 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>Indicator</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Process_Type</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>FPXCR_Transaction_Id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>FPXCR_Trx_Sno</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>FPXDR_Transaction_Id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>FPXDR_Trx_Sno</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Message_Type</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Message_Token</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TRX_DateTime</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Seller_Order_No</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Bank_Acc_No</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Bank_Id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Currency</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Trx_Amt</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Settlement_Cur</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Settlement_Amt</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Auth_Code</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Auth_No</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Trx_Status</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Settlement_Date</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Fee_Indicator</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Charge_Fee_Amt</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Buyer_Distribution_Fee</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Exchange_Bank_Fee</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>Seller_Distribution_Fee</name>
+      </field>      <field>        <name>count</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3300,6 +2670,18 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
+      </meta>      <meta>        <name>count</name>
+        <rename>count</rename>
+        <type>-</type>
+        <length>7</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
       </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
         <rename>UPD_RECORD_NUMBER</rename>
         <type>-</type>
@@ -3326,14 +2708,14 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>306</xloc>
-      <yloc>335</yloc>
+      <xloc>385</xloc>
+      <yloc>244</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values 3 3</name>
+    <name>Select values 2 3</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -3439,6 +2821,10 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>Seller_Distribution_Fee</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>count</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3506,7 +2892,7 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>TotAmt</name>
+      </field>      <field>        <name>UPD_COUNT</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -3514,198 +2900,48 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
       <remove>        <name>Indicator</name>
       </remove>      <remove>        <name>Process_Type</name>
       </remove>      <remove>        <name>FPXCR_Transaction_Id</name>
+      </remove>      <remove>        <name>FPXCR_Trx_Sno</name>
       </remove>      <remove>        <name>FPXDR_Transaction_Id</name>
+      </remove>      <remove>        <name>FPXDR_Trx_Sno</name>
+      </remove>      <remove>        <name>Message_Type</name>
       </remove>      <remove>        <name>Message_Token</name>
-      </remove>      <remove>        <name>Bank_Acc_No</name>
-      </remove>      <remove>        <name>Trx_Amt</name>
-      </remove>      <remove>        <name>Settlement_Amt</name>
-      </remove>      <remove>        <name>Settlement_Date</name>
       </remove>      <remove>        <name>TRX_DateTime</name>
-      </remove>      <meta>        <name>FPXCR_Trx_Sno</name>
-        <rename>FPX_CR_TRX_SL_NO</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPXDR_Trx_Sno</name>
-        <rename>FPX_DR_TRX_SL_NO</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Message_Type</name>
-        <rename>MESSEGA_TYPE</rename>
-        <type>-</type>
-        <length>2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Seller_Order_No</name>
-        <rename>SELLER_ORDER_NO</rename>
-        <type>-</type>
-        <length>40</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Bank_Id</name>
-        <rename>BANK_ID</rename>
-        <type>-</type>
-        <length>15</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Currency</name>
-        <rename>TRX_CURRENCY</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Settlement_Cur</name>
-        <rename>SETTLEMENT_CURRENCY</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Auth_Code</name>
-        <rename>AUTHORIZATION_CODE</rename>
-        <type>-</type>
-        <length>2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Auth_No</name>
-        <rename>AUTHORIZATION_NO</rename>
-        <type>-</type>
-        <length>20</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Trx_Status</name>
-        <rename>TRX_STATUS</rename>
-        <type>-</type>
-        <length>3</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Fee_Indicator</name>
-        <rename>FEE_IND</rename>
-        <type>-</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Charge_Fee_Amt</name>
-        <rename>CHARGE_FEE_AMOUNT</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Buyer_Distribution_Fee</name>
-        <rename>BB_DIST_FEE</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Exchange_Bank_Fee</name>
-        <rename>EXC_DIST_FEE</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>Seller_Distribution_Fee</name>
-        <rename>SELLER_DIST_FEE</rename>
-        <type>-</type>
-        <length>16</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>UPD_RECORD_NUMBER</name>
+      </remove>      <remove>        <name>Seller_Order_No</name>
+      </remove>      <remove>        <name>Bank_Acc_No</name>
+      </remove>      <remove>        <name>Bank_Id</name>
+      </remove>      <remove>        <name>Currency</name>
+      </remove>      <remove>        <name>Trx_Amt</name>
+      </remove>      <remove>        <name>Settlement_Cur</name>
+      </remove>      <remove>        <name>Settlement_Amt</name>
+      </remove>      <remove>        <name>Auth_Code</name>
+      </remove>      <remove>        <name>Auth_No</name>
+      </remove>      <remove>        <name>Trx_Status</name>
+      </remove>      <remove>        <name>Settlement_Date</name>
+      </remove>      <remove>        <name>Fee_Indicator</name>
+      </remove>      <remove>        <name>Charge_Fee_Amt</name>
+      </remove>      <remove>        <name>Buyer_Distribution_Fee</name>
+      </remove>      <remove>        <name>Exchange_Bank_Fee</name>
+      </remove>      <remove>        <name>Seller_Distribution_Fee</name>
+      </remove>      <remove>        <name>count</name>
+      </remove>      <remove>        <name>UPD_IDENTIFIER</name>
+      </remove>      <remove>        <name>FIELD_INDICATOR</name>
+      </remove>      <remove>        <name>PROCESS_TYPE_1</name>
+      </remove>      <remove>        <name>FPX_CR_TRX_ID</name>
+      </remove>      <remove>        <name>FPX_DR_TRX_ID</name>
+      </remove>      <remove>        <name>MESSEGA_TOKEN</name>
+      </remove>      <remove>        <name>BANK_ACCOUNT_NO</name>
+      </remove>      <remove>        <name>TRX_AMOUNT</name>
+      </remove>      <remove>        <name>SETTLEMENT_DATETIME</name>
+      </remove>      <remove>        <name>TRX_DATETIME_1</name>
+      </remove>      <remove>        <name>SETTLEMENT_AMOUNT</name>
+      </remove>      <remove>        <name>PROCESS_TYPE_ORIGIN</name>
+      </remove>      <remove>        <name>MESSEGA_TOKEN_TYPE</name>
+      </remove>      <remove>        <name>FPX_TX_ID</name>
+      </remove>      <meta>        <name>UPD_RECORD_NUMBER</name>
         <rename>UPD_RECORD_NUMBER</rename>
         <type>-</type>
-        <length>10</length>
-        <precision>0</precision>
+        <length>-2</length>
+        <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
         <encoding/>
@@ -3716,18 +2952,6 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
       </meta>      <meta>        <name>EVENT_MESSAGE_ID</name>
         <rename>EVENT_MESSAGE_ID</rename>
         <type>-</type>
-        <length>9</length>
-        <precision>0</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>UPD_IDENTIFIER</name>
-        <rename>UPD_IDENTIFIER</rename>
-        <type>-</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
@@ -3737,168 +2961,12 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>FIELD_INDICATOR</name>
-        <rename>FIELD_INDICATOR</rename>
+      </meta>      <meta>        <name>UPD_COUNT</name>
+        <rename>UPD_COUNT</rename>
         <type>-</type>
         <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>PROCESS_TYPE_1</name>
-        <rename>PROCESS_TYPE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPX_CR_TRX_ID</name>
-        <rename>FPX_CR_TRX_ID</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPX_DR_TRX_ID</name>
-        <rename>FPX_DR_TRX_ID</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>MESSEGA_TOKEN</name>
-        <rename>MESSEGA_TOKEN</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>BANK_ACCOUNT_NO</name>
-        <rename>BANK_ACCOUNT_NO</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TRX_AMOUNT</name>
-        <rename>TRX_AMOUNT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>SETTLEMENT_DATETIME</name>
-        <rename>SETTLEMENT_DATETIME</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TRX_DATETIME_1</name>
-        <rename>TRX_DATETIME</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>SETTLEMENT_AMOUNT</name>
-        <rename>SETTLEMENT_AMOUNT</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>PROCESS_TYPE_ORIGIN</name>
-        <rename>PROCESS_TYPE_ORIGIN</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>MESSEGA_TOKEN_TYPE</name>
-        <rename>MESSEGA_TOKEN_TYPE</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>FPX_TX_ID</name>
-        <rename>FPX_TX_ID</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>TotAmt</name>
-        <rename>DAT_AMOUNT_3</rename>
-        <type>-</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>##</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
         <encoding/>
         <decimal_symbol/>
@@ -3907,15 +2975,15 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>733</xloc>
-      <yloc>239</yloc>
+      <xloc>688</xloc>
+      <yloc>353</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Blocking Step 2 3 3 2</name>
-    <type>BlockingStep</type>
+    <name>Data Validator 2</name>
+    <type>Validator</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -3923,15 +2991,256 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <pass_all_rows>N</pass_all_rows>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>block</prefix>
-      <cache_size>5000</cache_size>
-      <compress>Y</compress>
+<validate_all>N</validate_all>
+<concat_errors>N</concat_errors>
+<concat_separator>|</concat_separator>
+       <validator_field><name>UPD_COUNT</name>
+<validation_name>as</validation_name>
+<max_length>2</max_length>
+<min_length/>
+<null_allowed>N</null_allowed>
+<only_null_allowed>N</only_null_allowed>
+<only_numeric_allowed>N</only_numeric_allowed>
+<data_type>String</data_type>
+<data_type_verified>Y</data_type_verified>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<max_value/>
+<min_value/>
+<start_string/>
+<end_string/>
+<start_string_not_allowed/>
+<end_string_not_allowed/>
+<regular_expression/>
+<regular_expression_not_allowed/>
+<error_code/>
+<error_description>Row Count is mis-matched</error_description>
+<is_sourcing_values>N</is_sourcing_values>
+<sourcing_step/>
+<sourcing_field/>
+<allowed_value></allowed_value></validator_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>820</xloc>
-      <yloc>81</yloc>
+      <xloc>835</xloc>
+      <yloc>351</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Handle Err DB 3 2 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+
+
+var UPD_IDENTIFIER = getVariable(&quot;HexUploadID&quot;, &quot;failed&quot;);
+
+
+var sourcefile=getVariable(&quot;HexInputFileName&quot;, &quot;failed&quot;);
+
+var FILENAME=getShortFilename(sourcefile);
+
+var Error =UPD_ERROR_MESSAGE+ &apos;  for file  &apos; +FILENAME;
+
+var UPD_ERROR_MESSAGE=Error;
+
+
+
+
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_ERROR_MESSAGE</name>
+        <rename>UPD_ERROR_MESSAGE</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>UPD_IDENTIFIER</name>
+        <rename>UPD_IDENTIFIER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>951</xloc>
+      <yloc>354</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Persist  DB Error 3 2 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>HexGenJNDI</connection>
+    <schema/>
+    <table>im_event_log</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>UPD_IDENTIFIER</column_name>
+          <stream_name>UPD_IDENTIFIER</stream_name>
+        </field>
+        <field>
+          <column_name>MESSAGE</column_name>
+          <stream_name>UPD_ERROR_MESSAGE</stream_name>
+        </field>
+        <field>
+          <column_name>EVENT_MESSAGE_ID</column_name>
+          <stream_name>EVENT_MESSAGE_ID</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1081</xloc>
+      <yloc>356</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Select values 3</send_true_to>
+<send_false_to>Select values 2 3</send_false_to>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>UPD_COUNT</leftvalue>
+ <function>=</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>ROWCOUNTMIS</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>691</xloc>
+      <yloc>247</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Handle Err DB 3 2 2 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#47;&#47;Script here
+
+
+
+var UPD_COUNT = getVariable(&quot;updrowcount&quot;,&quot;failed&quot;);
+
+
+
+
+
+
+
+</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>UPD_COUNT</name>
+        <rename>UPD_COUNT</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>597</xloc>
+      <yloc>246</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Data Validator</send_true_to>
+<send_false_to>Dummy (do nothing)</send_false_to>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>FIELD_INDICATOR</leftvalue>
+ <function>=</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>T</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>851</xloc>
+      <yloc>242</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>786</xloc>
+      <yloc>147</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -3940,18 +3249,6 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
       <error>
         <source_step>Data Segration</source_step>
         <target_step>Handle Err DB 3</target_step>
-        <is_enabled>Y</is_enabled>
-        <nr_valuename/>
-        <descriptions_valuename>UPD_ERROR_MESSAGE</descriptions_valuename>
-        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
-        <codes_valuename/>
-        <max_errors/>
-        <max_pct_errors/>
-        <min_pct_rows/>
-      </error>
-      <error>
-        <source_step>Data Segration 2</source_step>
-        <target_step>Handle Err DB 3 3</target_step>
         <is_enabled>Y</is_enabled>
         <nr_valuename/>
         <descriptions_valuename>UPD_ERROR_MESSAGE</descriptions_valuename>
@@ -3979,6 +3276,18 @@ var REC_CREATED_BY = &quot;System&quot;;</jsScript_script>
         <is_enabled>Y</is_enabled>
         <nr_valuename/>
         <descriptions_valuename>UPD_DB_ERRORS</descriptions_valuename>
+        <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+      <error>
+        <source_step>Data Validator 2</source_step>
+        <target_step>Handle Err DB 3 2 2</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>UPD_ERROR_MESSAGE</descriptions_valuename>
         <fields_valuename>UPD_COLUMN_NAME</fields_valuename>
         <codes_valuename/>
         <max_errors/>
